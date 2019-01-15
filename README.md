@@ -41,8 +41,12 @@ Por tanto, tu tarea va a consistir en completar los siguientes apartados:
 
 
 
-###### Se valorar√°:
+###### Se valorar·:
 - La nomenclatura del repositorio de GitHub y del archivo entregado sigue las indicaciones de entrega.
-- La indentaci√≥n debe ser correcta en cada uno de los apartados.
- -El nombre de las variables debe ser adecuado..- Se debe utilizar la clase Entrada para realizar la entrada por teclado..- El proyecto debe pasar todas las pruebas que van en el esqueleto del mismo y toda entrada del programa ser√° validada para evitar que el programa termine abruptamente debido a una excepci√≥n..- Se deben utilizar los comentarios adecuados..- Se valorar√° la correcci√≥n ortogr√°fica tanto en los comentarios como en los mensajes que se muestren al usuario,.
+- La indentaciÛn debe ser correcta en cada uno de los apartados.
+ -El nombre de las variables debe ser adecuado.
+ - Se debe utilizar la clase Entrada para realizar la entrada por teclado.
+ - El proyecto debe pasar todas las pruebas que van en el esqueleto del mismo y toda entrada del programa ser· validada para evitar que el programa termine abruptamente debido a una excepciÛn.
+ - Se deben utilizar los comentarios adecuados.
+ - Se valorar· la correcciÛn ortogr·fica tanto en los comentarios como en los mensajes que se muestren al usuario.
 
