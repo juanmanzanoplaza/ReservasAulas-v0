@@ -15,22 +15,18 @@ public class Aulas {
 	}
 
 	public Aulas(Aulas aulas) {
-		if(aulas==null)
-			throw new IllegalArgumentException("No se pueden copiar aulas nulas.");
 		setAulas(aulas);
 	}
 
 	private void setAulas(Aulas aulas) {
 		if(aulas==null)
-			throw new IllegalArgumentException("setAulas error null");
+			throw new IllegalArgumentException("No se pueden copiar aulas nulas.");
 		this.coleccionAulas = copiaProfundaAulas(aulas.getAulas());
 	}
 
 	private Aula[] copiaProfundaAulas(Aula[] coleccionAulas) {
-		if(coleccionAulas==null)
-			throw new IllegalArgumentException("copiaprofundaaulas error null");
-		Aula[] copia = new Aula[coleccionAulas.length];
-		for(int i = 0; i<copia.length && coleccionAulas[i]!=null; i++) //Falta por añadir condiciones la for
+		Aula[] copia = new Aula[MAX_AULAS];
+		for(int i = 0; i<copia.length && coleccionAulas[i]!=null; i++)
 			copia[i] = new Aula(coleccionAulas[i]);
 		return copia;
 	}
@@ -47,14 +43,13 @@ public class Aulas {
 		if(aula==null)
 			throw new IllegalArgumentException("No se puede insertar un aula nula.");
 		int indice = buscarIndiceAula(aula);
-		
 		if(indiceNoSuperaTamano(indice))
 			throw new OperationNotSupportedException("El aula ya existe.");
 		if(indiceNoSuperaCapacidad(indice)) {
 			coleccionAulas[indice] = aula;
 			numAulas++;
 		} else
-			throw new OperationNotSupportedException("Lleno?");
+			throw new OperationNotSupportedException("Se ha alcanzado el máximo de aulas que se pueden guardar.");
 
 	}
 
