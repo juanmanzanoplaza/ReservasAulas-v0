@@ -1,19 +1,36 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dao;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+import java.time.LocalDate;
+
+import javax.naming.OperationNotSupportedException;
+
+import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
+import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Permanencia;
+import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
+import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Reserva;
+import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Tramo;
+import org.junit.Test;
+
 public class ReservasTest {
-/*	
-	private static final String NOMBRE_PROFESOR1 = "JosÃ© RamÃ³n";
-	private static final String NOMBRE_PROFESOR2 = "AndrÃ©s";
+	private static final String NOMBRE_PROFESOR1 = "José Ramón";
+	private static final String NOMBRE_PROFESOR2 = "Andrés";
 	private static final String CORREO = "a@b.cc";
-	private static final String NOMBRE_AULA1 = "SalÃ³n de actos 1";
-	private static final String NOMBRE_AULA2 = "SalÃ³n de actos 2";
-	private static final String NOMBRE_AULA3 = "SalÃ³n de actos 3";
+	private static final String NOMBRE_AULA1 = "Salón de actos 1";
+	private static final String NOMBRE_AULA2 = "Salón de actos 2";
+	private static final String NOMBRE_AULA3 = "Salón de actos 3";
 	private static final LocalDate DIA1 = LocalDate.of(2018, 12, 1);
 	private static final LocalDate DIA2 = LocalDate.of(2018, 12, 31);
 	private static final LocalDate DIA3 = LocalDate.of(2018, 12, 22);
-	private static final String ERROR_EXCEPCION = "DeberÃ­a haber saltado la excepciÃ³n.";
-	private static final String ERROR_NO_EXCEPCION = "No deberÃ­a haber saltado la excepciÃ³n.";
-	
+	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
+	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
+
 	private final Profesor profesor1 = new Profesor(NOMBRE_PROFESOR1, CORREO);
 	private final Profesor profesor2 = new Profesor(NOMBRE_PROFESOR2, CORREO);
 	private final Aula aula1 = new Aula(NOMBRE_AULA1);
@@ -34,7 +51,7 @@ public class ReservasTest {
 		Reservas reservas = new Reservas();
 		assertEquals(0, reservas.getNumReservas());
 	}
-	
+
 	@Test
 	public void constructorCopiaValidoTest() {
 		Reservas reservas1 = new Reservas();
@@ -43,7 +60,7 @@ public class ReservasTest {
 		assertEquals(0, reservas2.getNumReservas());
 		assertNotEquals(reservas1.getReservas(), reservas2.getReservas());
 	}
-	
+
 	@Test
 	public void constructorCopiaNoValidoTest() {
 		Reservas reservas = null;
@@ -56,7 +73,7 @@ public class ReservasTest {
 			assertNull(reservas1);
 		}
 	}
-	
+
 	@Test
 	public void insertarUnaValidaTest() {
 		Reservas reservas = new Reservas();
@@ -68,7 +85,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void insertarNulaTest() {
 		Reservas reservas = new Reservas();
@@ -82,7 +99,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void insertarRepetidaTest() {
 		Reservas reservas = new Reservas();
@@ -103,7 +120,7 @@ public class ReservasTest {
 			assertEquals(1, reservas.getNumReservas());
 		}
 	}
-	
+
 	@Test
 	public void insertarTresValidoTest() {
 		Reservas reservas = new Reservas();
@@ -121,7 +138,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void getReservasTest() {
 		Reservas reservas = new Reservas();
@@ -135,7 +152,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	private Reservas insertarCuatro() {
 		Reservas reservas = new Reservas();
 		try {
@@ -148,7 +165,7 @@ public class ReservasTest {
 		}
 		return reservas;
 	}
-	
+
 	@Test
 	public void borrarPrincipioValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -164,7 +181,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void borrarMedioValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -180,7 +197,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void borrarFinalValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -196,7 +213,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void borrarNuloTest() {
 		Reservas reservas = insertarCuatro();
@@ -210,7 +227,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void borrarNoValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -231,7 +248,7 @@ public class ReservasTest {
 			assertEquals(4, reservas.getNumReservas());
 		}
 	}
-	
+
 	@Test
 	public void borrarInsertarTest() {
 		Reservas reservas = insertarCuatro();
@@ -251,13 +268,13 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void buscarNuloTest() {
 		Reservas reservas = insertarCuatro();
 		assertNull(reservas.buscar(null));
 	}
-	
+
 	@Test
 	public void representarTest() {
 		Reservas reservas = insertarCuatro();
@@ -267,7 +284,7 @@ public class ReservasTest {
 		assertEquals(reserva3.toString(), representacion[2]);
 		assertEquals(reserva4.toString(), representacion[3]);
 	}
-	
+
 	@Test
 	public void getReservasProfesorTest() {
 		Reservas reservas = insertarCuatro();
@@ -280,7 +297,7 @@ public class ReservasTest {
 		reservasProfesor = reservas.getReservasProfesor(profesor2);
 		assertNull(reservasProfesor[0]);
 	}
-	
+
 	@Test
 	public void getReservasAulaTest() {
 		Reservas reservas = insertarCuatro();
@@ -291,7 +308,7 @@ public class ReservasTest {
 		reservasAula = reservas.getReservasAula(aula3);
 		assertNull(reservasAula[0]);
 	}
-	
+
 	@Test
 	public void getReservasPermanenciaTest() {
 		Reservas reservas = insertarCuatro();
@@ -302,7 +319,7 @@ public class ReservasTest {
 		reservasPermanencia = reservas.getReservasPermanencia(permanencia3);
 		assertNull(reservasPermanencia[0]);
 	}
-	
+
 	@Test
 	public void consultarDisponibilidadValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -313,7 +330,7 @@ public class ReservasTest {
 		assertTrue(reservas.consultarDisponibilidad(aula, permanencia1));
 		assertTrue(reservas.consultarDisponibilidad(aula, permanencia));
 	}
-	
+
 	@Test
 	public void consultarDisponibilidadNoValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -330,5 +347,4 @@ public class ReservasTest {
 			assertEquals("No se puede consultar la disponibilidad de una permanencia nula.", e.getMessage());
 		}
 	}
-*/
 }

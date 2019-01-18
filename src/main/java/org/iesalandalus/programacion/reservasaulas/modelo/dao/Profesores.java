@@ -25,10 +25,10 @@ public class Profesores {
 		this.coleccionProfesores = copiaProfundaProfesores(profesores.getProfesores());
 	}
 
-	private Profesor[] copiaProfundaProfesores(Profesor[] coleccionProfesores) {
+	private Profesor[] copiaProfundaProfesores(Profesor[] profesores) {
 		Profesor[] copia = new Profesor[MAX_PROFESORES];
-		for(int i = 0; i<copia.length && coleccionProfesores[i]!=null; i++)
-			copia[i] = new Profesor(coleccionProfesores[i]);
+		for(int i = 0; i<copia.length && profesores[i]!=null; i++)
+			copia[i] = new Profesor(profesores[i]);
 		return copia;
 	}
 
