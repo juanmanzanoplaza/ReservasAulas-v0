@@ -83,7 +83,6 @@ public class Profesor {
 
 	public int hashCode() {
 		return Objects.hash(nombre, correo, telefono);
-
 	}
 
 	public boolean equals(Object o) {

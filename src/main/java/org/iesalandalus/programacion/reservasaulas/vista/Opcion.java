@@ -1,143 +1,130 @@
 package org.iesalandalus.programacion.reservasaulas.vista;
 
+import javax.naming.OperationNotSupportedException;
+
 public enum Opcion {
-	SALIR("") {
+	SALIR("Salir.") {
 		@Override
 		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+			vista.salir();
 		}
 	}
-	, INSERTAR_AULA("") {
+	, INSERTAR_AULA("Insertar aula:") {
 		@Override
-		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+		public void ejecutar() throws OperationNotSupportedException {
+			vista.insertarAula();
 		}
 	}
-	, BORRAR_AULA("") {
+	, BORRAR_AULA("Borrar aula:") {
 		@Override
-		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+		public void ejecutar() throws OperationNotSupportedException {
+			vista.borrarAula();
 		}
 	}
-	, BUSCAR_AULA("") {
+	, BUSCAR_AULA("Buscar aula:") {
 		@Override
 		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+			vista.buscarAula();
 		}
 	}
-	, LISTAR_AULAS("") {
+	, LISTAR_AULAS("Listar aulas:") {
 		@Override
 		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+			vista.listarAulas();
 		}
 	}
-	, INSERTAR_PROFESOR("") {
+	, INSERTAR_PROFESOR("Insertar profesor:") {
 		@Override
-		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+		public void ejecutar() throws OperationNotSupportedException {
+			vista.insertarProfesor();
 		}
 	}
-	, BORRAR_PROFESOR("") {
+	, BORRAR_PROFESOR("Borrar profesor:") {
 		@Override
-		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+		public void ejecutar() throws OperationNotSupportedException {
+			vista.borrarProfesor();
 		}
 	}
-	, BUSCAR_PROFESOR("") {
+	, BUSCAR_PROFESOR("Buscar profesor:") {
 		@Override
 		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+			vista.buscarProfesor();
 		}
 	}
-	, LISTAR_PROFESORES("") {
+	, LISTAR_PROFESORES("Listar profesores:") {
 		@Override
 		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+			vista.listarProfesores();
 		}
 	}
-	, INSERTAR_RESERVA("") {
+	, INSERTAR_RESERVA("Insertar reserva:") {
 		@Override
-		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+		public void ejecutar() throws OperationNotSupportedException {
+			vista.realizarReserva();
 		}
 	}
-	, BORRAR_RESERVA("") {
+	, BORRAR_RESERVA("Borrar reserva:") {
 		@Override
-		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+		public void ejecutar() throws OperationNotSupportedException {
+			vista.anularReserva();
 		}
 	}
-	, LISTAR_RESERVAS("") {
+	, LISTAR_RESERVAS("Listar reservas:") {
 		@Override
 		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+			vista.listarReservas();
 		}
 	}
-	, LISTAR_RESERVAS_AULA("") {
+	, LISTAR_RESERVAS_AULA("Listar reservas por aula:") {
 		@Override
 		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+			vista.listarReservasAula();
 		}
 	}
-	, LISTAR_RESERVAS_PROFESOR("") {
+	, LISTAR_RESERVAS_PROFESOR("Listar reservas por profesor:") {
 		@Override
 		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+			vista.listarReservasProfesor();
 		}
 	}
-	, LISTAR_RESERVAS_PERMANENCIA("") {
+	, LISTAR_RESERVAS_PERMANENCIA("Listar reservas por permanencia:") {
 		@Override
 		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+			vista.listarReservasPermanencia();
 		}
 	}
-	, CONSULTAR_DISPONIBILIDAD("") {
+	, CONSULTAR_DISPONIBILIDAD("Consultar disponibilidad:") {
 		@Override
 		public void ejecutar() {
-			// TODO Auto-generated method stub
-			
+			vista.consultarDisponibilidad();
 		}
 	};
 	private String mensajeAMostrar;
-//	private static IUTextual vista;
-	
+	private static IUTextual vista;
+
 	private Opcion(String mensajeAMostrar) {
 		this.mensajeAMostrar = mensajeAMostrar;
+		setVista(new IUTextual());
 	}
-	
+
 	public String getMensaje() {
 		return mensajeAMostrar;
 	}
-	
-	public abstract void ejecutar();
-	
-//	protected static void setVista(IUTextual iutextual) {
-		
-//	}
-	
+
+	public abstract void ejecutar() throws OperationNotSupportedException;
+
+	protected static void setVista(IUTextual iutextual) {
+		vista = iutextual;
+	}
+
 	public String toString() {
 		return mensajeAMostrar;
 	}
-	
+
 	public static Opcion getOpcionSegunOrdinal(int ordinal) {
 		return Opcion.values()[ordinal];
 	}
-	
+
 	public static boolean esOrdinalValido(int ordinal) {
 		if(ordinal>=0 && ordinal<Opcion.values().length)
 			return true;
