@@ -4,8 +4,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-import javax.swing.text.DateFormatter;
-
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Tramo;
@@ -19,6 +17,7 @@ public class Consola {
 
 	}
 
+	//REVISAR EJEMPLO GESTIONCLIENTES PARA RECORRER EL ENUM
 	public static void mostrarMenu() {
 		System.out.println("*************************************************************");
 		System.out.println("*           RESERVAS DE AULAS DEL IES AL-ÁNDALUS            *");
@@ -28,21 +27,22 @@ public class Consola {
 		System.out.println("* 2 - Borrar aula.                                          *");
 		System.out.println("* 3 - Buscar aula.                                          *");
 		System.out.println("* 4 - Listar aulas.                                         *");
-		System.out.println("* 5 - Borrar profesor.                                      *");
-		System.out.println("* 6 - Buscar profesor.                                      *");
-		System.out.println("* 7 - Listar profesores.                                    *");
-		System.out.println("* 8 - Insertar reserva.                                     *");
-		System.out.println("* 9 - Borrar reserva.                                       *");
-		System.out.println("* 10- Listar reservas.                                      *");
-		System.out.println("* 11- Listar reservas de un aula determinada.               *");
-		System.out.println("* 12- Listar reservas hechas por un profesor determinado.   *");
-		System.out.println("* 13- Listar reservas en una fecha concreta.                *");
-		System.out.println("* 14- Consultar disponibilidad.                             *");
+		System.out.println("* 5 - Insertar profesor.                                    *");
+		System.out.println("* 6 - Borrar profesor.                                      *");
+		System.out.println("* 7 - Buscar profesor.                                      *");
+		System.out.println("* 8 - Listar profesores.                                    *");
+		System.out.println("* 9 - Insertar reserva.                                     *");
+		System.out.println("* 10- Borrar reserva.                                       *");
+		System.out.println("* 11- Listar reservas.                                      *");
+		System.out.println("* 12- Listar reservas de un aula determinada.               *");
+		System.out.println("* 13- Listar reservas hechas por un profesor determinado.   *");
+		System.out.println("* 14- Listar reservas en una fecha concreta.                *");
+		System.out.println("* 15- Consultar disponibilidad.                             *");
 		System.out.println("*************************************************************");
 	}
 
 	public static void mostrarCabecera(String cabecera) {
-		//Cabecera
+		System.out.println(cabecera);
 	}
 
 	public static int elegirOpcion() {
@@ -68,8 +68,11 @@ public class Consola {
 	}
 
 	public static String leerNombreAula() {
-		System.out.print("Introduzca el nombre del aula:");
-		String nombre = Entrada.cadena();
+		String nombre;
+		do {
+			System.out.print("Introduzca el nombre del aula:");
+			nombre = Entrada.cadena();
+		}while(nombre.equals(""));
 		return nombre;
 	}
 
@@ -95,17 +98,21 @@ public class Consola {
 	}
 
 	public static String leerNombreProfesor() {
-		System.out.print("Introduzca el nombre del profesor:");
-		String nombre = Entrada.cadena();
+		String nombre;
+		do {
+			System.out.print("Introduzca el nombre del profesor:");
+			nombre = Entrada.cadena();
+		} while(nombre.equals(""));
 		return nombre;
 	}
 
+	//Corregir para que recorra el enum
 	public static Tramo leerTramo() {
 		int opcion;
 		do {
 			System.out.print("¿Tramo de mañana(0) o de tarde(1)?:");
 			opcion = Entrada.entero();
-		} while(opcion>=0 && opcion<Tramo.values().length);
+		} while(opcion<0 || opcion>Tramo.values().length);
 		return Tramo.values()[opcion];
 
 	}
@@ -113,11 +120,11 @@ public class Consola {
 	public static LocalDate leerDia() {
 		LocalDate leido = null;
 		do {
-			System.out.print("Introduzca una fecha en el formato " + FORMATO_DIA.toString());
+			System.out.print("Introduzca una fecha en el formato dd/mm/aaaa: ");
 			try {
 				leido = LocalDate.parse(Entrada.cadena(), FORMATO_DIA);
 			} catch (DateTimeParseException e) {
-				System.out.println("La fecha introducida no está en el formato correcto.");
+				System.out.println("La fecha introducida no está en el formato correcto o no es válida.");
 			}
 		} while (leido == null);
 		return leido;

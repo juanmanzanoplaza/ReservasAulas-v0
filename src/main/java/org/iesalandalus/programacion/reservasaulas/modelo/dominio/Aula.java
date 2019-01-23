@@ -43,7 +43,6 @@ public class Aula {
 		return false;
 	}
 	
-	//[nombre=Salón de actos]
 	public String toString() {
 		return "[nombre=" + nombre + "]";
 	}
