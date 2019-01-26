@@ -3,6 +3,7 @@ package org.iesalandalus.programacion.reservasaulas.vista;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Iterator;
 
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
@@ -22,23 +23,33 @@ public class Consola {
 		System.out.println("*************************************************************");
 		System.out.println("*           RESERVAS DE AULAS DEL IES AL-ÁNDALUS            *");
 		System.out.println("*************************************************************");
-		System.out.println("* 0 - Salir.                                                *");
-		System.out.println("* 1 - Insertar aula.                                        *");
-		System.out.println("* 2 - Borrar aula.                                          *");
-		System.out.println("* 3 - Buscar aula.                                          *");
-		System.out.println("* 4 - Listar aulas.                                         *");
-		System.out.println("* 5 - Insertar profesor.                                    *");
-		System.out.println("* 6 - Borrar profesor.                                      *");
-		System.out.println("* 7 - Buscar profesor.                                      *");
-		System.out.println("* 8 - Listar profesores.                                    *");
-		System.out.println("* 9 - Insertar reserva.                                     *");
-		System.out.println("* 10- Borrar reserva.                                       *");
-		System.out.println("* 11- Listar reservas.                                      *");
-		System.out.println("* 12- Listar reservas de un aula determinada.               *");
-		System.out.println("* 13- Listar reservas hechas por un profesor determinado.   *");
-		System.out.println("* 14- Listar reservas en una fecha concreta.                *");
-		System.out.println("* 15- Consultar disponibilidad.                             *");
+		int i = 0;
+		for (Opcion o: Opcion.values()) {
+			System.out.printf("* %-2d- %-54s*\n", i, o.getMensaje());
+			i++;
+		}
 		System.out.println("*************************************************************");
+		
+//		System.out.println("*************************************************************");
+//		System.out.println("*           RESERVAS DE AULAS DEL IES AL-ÁNDALUS            *");
+//		System.out.println("*************************************************************");
+//		System.out.println("* 0 - Salir.                                                *");
+//		System.out.println("* 1 - Insertar aula.                                        *");
+//		System.out.println("* 2 - Borrar aula.                                          *");
+//		System.out.println("* 3 - Buscar aula.                                          *");
+//		System.out.println("* 4 - Listar aulas.                                         *");
+//		System.out.println("* 5 - Insertar profesor.                                    *");
+//		System.out.println("* 6 - Borrar profesor.                                      *");
+//		System.out.println("* 7 - Buscar profesor.                                      *");
+//		System.out.println("* 8 - Listar profesores.                                    *");
+//		System.out.println("* 9 - Insertar reserva.                                     *");
+//		System.out.println("* 10- Borrar reserva.                                       *");
+//		System.out.println("* 11- Listar reservas.                                      *");
+//		System.out.println("* 12- Listar reservas de un aula determinada.               *");
+//		System.out.println("* 13- Listar reservas hechas por un profesor determinado.   *");
+//		System.out.println("* 14- Listar reservas en una fecha concreta.                *");
+//		System.out.println("* 15- Consultar disponibilidad.                             *");
+//		System.out.println("*************************************************************");
 	}
 
 	public static void mostrarCabecera(String cabecera) {
