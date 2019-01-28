@@ -1,5 +1,13 @@
 package org.iesalandalus.programacion.reservasaulas.vista;
 
+/**
+ * 
+ * Representa las distintas opciones que ofrece el menú de la aplicación.
+ * @see IUTextual
+ * @author Juan Antonio Manzano Plaza
+ * @version 0
+ *
+ */
 public enum Opcion {
 	SALIR("Salir.") {
 		public void ejecutar() {
@@ -81,31 +89,61 @@ public enum Opcion {
 			vista.consultarDisponibilidad();
 		}
 	};
+	
 	private String mensajeAMostrar;
 	private static IUTextual vista;
 
+	/**
+	 * Constructor privado para evitar instanciar objetos de la clase.
+	 * @param mensajeAMostrar el título de la opción
+	 */
 	private Opcion(String mensajeAMostrar) {
 		this.mensajeAMostrar = mensajeAMostrar;
 	}
 
+	/**
+	 * Método get que devuelve el título de la opción
+	 * @return el título de la opción
+	 */
 	public String getMensaje() {
 		return mensajeAMostrar;
 	}
 
+	/**
+	 * Llama al método correspondiente a la opción de la clase {@link IUTextual}
+	 */
 	public abstract void ejecutar();
 
+	/**
+	 * Método set que inicializa la variable vista
+	 * @param iutextual objeto de la clase {@link IUTextual} sobre el que se van a realizar las opciones
+	 */
 	protected static void setVista(IUTextual iutextual) {
 		vista = iutextual;
 	}
 
+	/**
+	 * Define como debe mostrarse un objeto {@link Opcion}
+	 * @return mensajeAMostrar el título de la opción
+	 */
 	public String toString() {
 		return mensajeAMostrar;
 	}
 
+	/**
+	 * Devuelve la opción correspondiente al valor recibido
+	 * @param ordinal el valor de la opción
+	 * @return la opción correspondiente al ordinal
+	 */
 	public static Opcion getOpcionSegunOrdinal(int ordinal) {
 		return Opcion.values()[ordinal];
 	}
 
+	/**
+	 * Comprueba si un ordinal está dentro del rango de valores de {@link Opcion}
+	 * @param ordinal el valor de la opción que se desea seleccionar
+	 * @return True si el valor está dentro del rango, False si no
+	 */
 	public static boolean esOrdinalValido(int ordinal) {
 		if(ordinal>=0 && ordinal<Opcion.values().length)
 			return true;

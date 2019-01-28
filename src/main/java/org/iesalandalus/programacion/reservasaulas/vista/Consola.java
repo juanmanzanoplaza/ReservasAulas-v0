@@ -10,15 +10,27 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Tramo;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
+/**
+ * 
+ * Clase dedicada a la interacción con el usuario. Pide y valida los datos por teclado.
+ * @see IUTextual
+ * @author Juan Antonio Manzano Plaza
+ * @version 0
+ *
+ */
 public class Consola {
 
 	private static final DateTimeFormatter FORMATO_DIA = DateTimeFormatter.ofPattern("dd/MM/uuuu");
 
+	/**
+	 * Constructor privado para evitar que se instancien objetos de la clase.
+	 */
 	private Consola() {
-
 	}
 
-	//REVISAR EJEMPLO GESTIONCLIENTES PARA RECORRER EL ENUM
+	/**
+	 * Método estático encargado de mostrar por pantalla todas las opciones de {@link org.iesalandalus.programacion.reservasaulas.vista.Opcion}
+	 */
 	public static void mostrarMenu() {
 		System.out.println("*************************************************************");
 		System.out.println("*           RESERVAS DE AULAS DEL IES AL-ÁNDALUS            *");
@@ -29,33 +41,20 @@ public class Consola {
 			i++;
 		}
 		System.out.println("*************************************************************");
-		
-//		System.out.println("*************************************************************");
-//		System.out.println("*           RESERVAS DE AULAS DEL IES AL-ÁNDALUS            *");
-//		System.out.println("*************************************************************");
-//		System.out.println("* 0 - Salir.                                                *");
-//		System.out.println("* 1 - Insertar aula.                                        *");
-//		System.out.println("* 2 - Borrar aula.                                          *");
-//		System.out.println("* 3 - Buscar aula.                                          *");
-//		System.out.println("* 4 - Listar aulas.                                         *");
-//		System.out.println("* 5 - Insertar profesor.                                    *");
-//		System.out.println("* 6 - Borrar profesor.                                      *");
-//		System.out.println("* 7 - Buscar profesor.                                      *");
-//		System.out.println("* 8 - Listar profesores.                                    *");
-//		System.out.println("* 9 - Insertar reserva.                                     *");
-//		System.out.println("* 10- Borrar reserva.                                       *");
-//		System.out.println("* 11- Listar reservas.                                      *");
-//		System.out.println("* 12- Listar reservas de un aula determinada.               *");
-//		System.out.println("* 13- Listar reservas hechas por un profesor determinado.   *");
-//		System.out.println("* 14- Listar reservas en una fecha concreta.                *");
-//		System.out.println("* 15- Consultar disponibilidad.                             *");
-//		System.out.println("*************************************************************");
 	}
 
+	/**
+	 * Imprime por pantalla el título de la opción seleccionada.
+	 * @param cabecera el título de la opción
+	 */
 	public static void mostrarCabecera(String cabecera) {
 		System.out.println(cabecera);
 	}
 
+	/**
+	 * Lee por consola el valor ordinal de la opción que desea realizarse.
+	 * @return el valor ordinal de la opción a realizar
+	 */
 	public static int elegirOpcion() {
 		int opcion;
 		do {
@@ -65,6 +64,10 @@ public class Consola {
 		return opcion;
 	}
 
+	/**
+	 * Lee por consola el nombre de un aula y la crea.
+	 * @return el aula leída
+	 */
 	public static Aula leerAula() {
 		Aula leida = null;
 		do {
@@ -78,6 +81,10 @@ public class Consola {
 		return leida;
 	}
 
+	/**
+	 * Lee por consola el nombre de un aula.
+	 * @return el nombre leído
+	 */
 	public static String leerNombreAula() {
 		String nombre;
 		do {
@@ -87,6 +94,10 @@ public class Consola {
 		return nombre;
 	}
 
+	/**
+	 * Lee por consola todos los atributos de un profesor y lo crea.
+	 * @return el profesor leído
+	 */
 	public static Profesor leerProfesor() {
 		Profesor leido = null;
 		do {
@@ -108,6 +119,10 @@ public class Consola {
 		return leido;
 	}
 
+	/**
+	 * Lee por consola el nombre de un profesor.
+	 * @return el nombre leído
+	 */
 	public static String leerNombreProfesor() {
 		String nombre;
 		do {
@@ -117,7 +132,12 @@ public class Consola {
 		return nombre;
 	}
 
-	//Corregir para que recorra el enum
+	/**
+	 * Lee por consola un tramo. En esta versión sólo están las opciones de mañana (0) y de tarde (1)
+	 * Si añadimos más opciones a {@link org.iesalandalus.programacion.reservasaulas.modelo.dominio.Tramo}
+	 * será necesario cambiar la salida por pantalla, pero no el bucle ni el return.
+	 * @return el tramo horario leído
+	 */
 	public static Tramo leerTramo() {
 		int opcion;
 		do {
@@ -128,6 +148,10 @@ public class Consola {
 
 	}
 
+	/**
+	 * Lee una fecha con un formato específico.
+	 * @return la fecha leída
+	 */
 	public static LocalDate leerDia() {
 		LocalDate leido = null;
 		do {

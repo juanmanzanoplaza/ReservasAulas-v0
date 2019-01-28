@@ -4,6 +4,12 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Clase que representa un profesor de un instituto
+ * @author Juan Antonio Manzano Plaza
+ * @version 0
+ *
+ */
 public class Profesor {
 
 	private static final String ER_TELEFONO = "^[69][0-9]{8}$";
@@ -12,26 +18,47 @@ public class Profesor {
 	private String correo;
 	private String telefono;
 
+	/**
+	 * Constructor de la clase
+	 * @param nombre el nombre del profesor
+	 * @param correo el correo electrónico del profesor
+	 */
 	public Profesor(String nombre, String correo) {
 		setNombre(nombre);
 		setCorreo(correo);
 	}
 
+	/**
+	 * Constructor de la clase
+	 * @param nombre el nombre del profesor
+	 * @param correo el correo electrónico del profesor
+	 * @param telefono el teléfono del profesor
+	 */
 	public Profesor(String nombre, String correo, String telefono) {
 		setNombre(nombre);
 		setCorreo(correo);
 		setTelefono(telefono);
 	}
 
+	/**
+	 * Constructor copia
+	 * @param otro el profesor a copiar
+	 * @throws IllegalArgumentException si el profesor a copiar es nulo
+	 */
 	public Profesor(Profesor otro) {
 		if(otro==null)
 			throw new IllegalArgumentException("No se puede copiar un profesor nulo.");
 		setNombre(otro.getNombre());
 		setCorreo(otro.getCorreo());
 		setTelefono(otro.getTelefono());
-			
+
 	}
 
+	/**
+	 * Método set para el nombre del profesor
+	 * @param nombre el nombre del profesor
+	 * @throws IllegalArgumentException si el nombre es nulo o vacío
+	 */
 	private void setNombre(String nombre) {
 		if(nombre==null)
 			throw new IllegalArgumentException("El nombre del profesor no puede ser nulo.");
@@ -41,6 +68,11 @@ public class Profesor {
 
 	}
 
+	/**
+	 * Método set para el correo electrónico del profesor
+	 * @param correo el correo del profesor
+	 * @throws IllegalArgumentException si el correo es nulo o no es un correo con formato válido
+	 */
 	public void setCorreo(String correo) {
 		if(correo==null)
 			throw new IllegalArgumentException("El correo del profesor no puede ser nulo.");
@@ -53,6 +85,11 @@ public class Profesor {
 
 	}
 
+	/**
+	 * Método set para el teléfono del profesor
+	 * @param telefono el telefono del profesor
+	 * @throws IllegalArgumentException si el teléfono no tiene un formato válido
+	 */
 	public void setTelefono(String telefono) {
 		if(telefono==null) {
 			this.telefono = null;
@@ -66,25 +103,42 @@ public class Profesor {
 		}
 	}
 
+	/**
+	 * Método get para el nombre del profesor
+	 * @return el nombre del profesor
+	 */
 	public String getNombre() {
 		return nombre;
-
 	}
 
+	/**
+	 * Método get para el correo del profesor
+	 * @return el correo del profesor
+	 */
 	public String getCorreo() {
 		return correo;
-
 	}
 
+	/**
+	 * Método get para el teléfono del profesor
+	 * @return el teléfono del profesor
+	 */
 	public String getTelefono() {
 		return telefono;
-
 	}
 
+	/**
+	 * Método hashCode de la clase. Sirve para diferenciar objetos
+	 * @return el código hash del objeto
+	 */
 	public int hashCode() {
 		return Objects.hash(nombre, correo, telefono);
 	}
 
+	/**
+	 * Método equals de la clase
+	 * @return True si son iguales, False si no
+	 */
 	public boolean equals(Object o) {
 		if(o==null)
 			return false;
@@ -97,6 +151,10 @@ public class Profesor {
 
 	}
 
+	/**
+	 * Representa un profesor como una cadena de caracteres
+	 * @return la representación del profesor
+	 */
 	public String toString() {
 		String devolver = "[nombre=" + getNombre() + ", correo=" + getCorreo();
 		if(getTelefono()==null)
