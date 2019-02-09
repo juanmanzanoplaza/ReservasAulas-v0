@@ -14,7 +14,10 @@ import org.iesalandalus.programacion.reservasaulas.vista.IUTextual;
 /**
  * 
  * Clase modelo utilizada como intermediaria entre IUTextual, que accede a todas las funciones de la aplicación.
- * @see IUTextual, Profesores, Aulas, Reservas
+ * @see IUTextual
+ * @see Profesores
+ * @see Aulas
+ * @see Reservas
  * @author Juan Antonio Manzano Plaza
  * @version 0
  *

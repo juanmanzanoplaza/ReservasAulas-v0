@@ -4,7 +4,9 @@ import java.util.Objects;
 
 /**
  * Clase que representa la reserva de un aula en un instituto
- * @see Profesor, Aula, Permanencia
+ * @see Profesor
+ * @see Aula
+ * @see Permanencia
  * @author Juan Antonio Manzano Plaza
  * @version 0
  */

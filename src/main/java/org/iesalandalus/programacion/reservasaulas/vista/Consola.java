@@ -13,7 +13,8 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 /**
  * 
  * Clase dedicada a la interacción con el usuario. Pide y valida los datos por teclado.
- * @see IUTextual, Opcion
+ * @see IUTextual
+ * @see Opcion
  * @author Juan Antonio Manzano Plaza
  * @version 0
  *
