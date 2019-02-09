@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 /**
- * Clase que representa un tramo de reservas {@link Reserva}
+ * Clase que representa un tramo de reservas Reserva
  * @author Juan Antonio Manzano Plaza
  * @version 0
  *

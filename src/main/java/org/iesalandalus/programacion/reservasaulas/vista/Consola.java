@@ -13,7 +13,7 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 /**
  * 
  * Clase dedicada a la interacción con el usuario. Pide y valida los datos por teclado.
- * @see IUTextual
+ * @see IUTextual, Opcion
  * @author Juan Antonio Manzano Plaza
  * @version 0
  *
@@ -29,7 +29,7 @@ public class Consola {
 	}
 
 	/**
-	 * Método estático encargado de mostrar por pantalla todas las opciones de {@link org.iesalandalus.programacion.reservasaulas.vista.Opcion}
+	 * Método estático encargado de mostrar por pantalla todas las opciones de Opcion
 	 */
 	public static void mostrarMenu() {
 		System.out.println("*************************************************************");
@@ -134,7 +134,7 @@ public class Consola {
 
 	/**
 	 * Lee por consola un tramo. En esta versión sólo están las opciones de mañana (0) y de tarde (1)
-	 * Si añadimos más opciones a {@link org.iesalandalus.programacion.reservasaulas.modelo.dominio.Tramo}
+	 * Si añadimos más opciones a Tramo
 	 * será necesario cambiar la salida por pantalla, pero no el bucle ni el return.
 	 * @return el tramo horario leído
 	 */

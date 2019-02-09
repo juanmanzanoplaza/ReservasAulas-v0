@@ -6,10 +6,10 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 
 /**
  * Clase que guarda y define las operaciones que se pueden realizar sobre un conjunto de aulas.
- * @see {@link Aula}
+ * @see Aula
  * @author Juan Antonio Manzano Plaza
  * @version 0
- * 
+ *
  */
 public class Aulas {
 	private static final int MAX_AULAS = 100;

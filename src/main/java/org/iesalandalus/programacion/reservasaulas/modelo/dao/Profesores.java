@@ -6,10 +6,10 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 
 /**
  * Clase que guarda y define las operaciones que se pueden realizar sobre un conjunto de profesores
- * @see {@link Profesor}
+ * @see Profesor
  * @author Juan Antonio Manzano Plaza
  * @version 0
- * 
+ *
  */
 public class Profesores {
 

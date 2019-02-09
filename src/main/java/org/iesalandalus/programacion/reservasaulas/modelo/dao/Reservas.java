@@ -9,16 +9,16 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Reserva;
 
 /**
  * Clase que guarda y define las operaciones que se pueden realizar sobre un conjunto de reservas.
- * @see {@link Reserva}
+ * @see Reserva
  * @author Juan Antonio Manzano Plaza
  * @version 0
- * 
+ *
  */
 public class Reservas {
 	private static final int MAX_RESERVAS = 100;
 	private int numReservas;
 	private Reserva[] coleccionReservas;
-	
+
 	/**
 	 * Constructor por defecto. Inicializa el número de profesores a cero
 	 */
@@ -26,7 +26,7 @@ public class Reservas {
 		this.numReservas = 0;
 		coleccionReservas = new Reserva[MAX_RESERVAS];
 	}
-	
+
 	/**
 	 * Constructor copia. Realiza copia profunda para evitar aliasing
 	 * @param reservas el objeto del que obtener los datos para inicializar
@@ -34,7 +34,7 @@ public class Reservas {
 	public Reservas(Reservas reservas) {
 		setReservas(reservas);
 	}
-	
+
 	/**
 	 * Guarda en la colección actual de reservas los que hay en la colección recibida como parámetro
 	 * @param reservas la colección a copiar
@@ -45,7 +45,7 @@ public class Reservas {
 			throw new IllegalArgumentException("No se pueden copiar reservas nulas.");
 		this.coleccionReservas = copiaProfundaReservas(reservas.coleccionReservas);
 	}
-	
+
 	/**
 	 * Realiza la copia en profundidad de cada reserva para evitar aliasing
 	 * @param reservas la colección de reservas a copiar
@@ -57,7 +57,7 @@ public class Reservas {
 			copia[i] = new Reserva(reservas[i]);
 		return copia;
 	}
-	
+
 	/**
 	 * Obtiene todas las reservas de la colección actual. Realiza una copia para evitar aliasing
 	 * @return una copia de la colección
@@ -65,7 +65,7 @@ public class Reservas {
 	public Reserva[] getReservas() {
 		return copiaProfundaReservas(this.coleccionReservas);
 	}
-	
+
 	/**
 	 * Obtiene el número de reservas que existen en la colección actual
 	 * @return el número de reservas
@@ -73,7 +73,7 @@ public class Reservas {
 	public int getNumReservas() {
 		return numReservas;
 	}
-	
+
 	/**
 	 * Guarda una reserva en la colección
 	 * @param reserva la reserva a guardar
@@ -92,7 +92,7 @@ public class Reservas {
 		} else
 			throw new OperationNotSupportedException("Se ha alcanzado el máximo de reservas que se pueden guardar.");
 	}
-	
+
 	/**
 	 * Busca el índice en la colección de una reserva indicada
 	 * @param reserva la reserva cuyo índice queremos buscar
@@ -108,7 +108,7 @@ public class Reservas {
 		}
 		return MAX_RESERVAS;
 	}
-	
+
 	/**
 	 * Comprueba que el índice no supera el número de reservas existentes
 	 * @param indice el índice a comprobar
@@ -119,7 +119,7 @@ public class Reservas {
 			return true;
 		return false;
 	}
-	
+
 	/**
 	 * Comprueba que el índice no supera la cantidad máxima que se puede guardar
 	 * @param indice el índice a comprobar
@@ -130,7 +130,7 @@ public class Reservas {
 			return true;
 		return false;
 	}
-	
+
 	/**
 	 * Busca una reserva en la colección
 	 * @param reserva la reserva a buscar
@@ -144,7 +144,7 @@ public class Reservas {
 			return coleccionReservas[indice];
 		return null;
 	}
-	
+
 	/**
 	 * Borra una reserva de la colección
 	 * @param reserva la reserva a borrar
@@ -162,7 +162,7 @@ public class Reservas {
 		} else
 			throw new OperationNotSupportedException("La reserva a anular no existe.");
 	}
-	
+
 	/**
 	 * Desplaza las reservas a la posición anterior desde un índice dado
 	 * @param indice desde donde hay que mover las reservas
@@ -172,7 +172,7 @@ public class Reservas {
 			coleccionReservas[i] = coleccionReservas[i+1];
 		coleccionReservas[numReservas-1] = null;
 	}
-	
+
 	/**
 	 * Obtiene las salidas de todas las reservas de la colección
 	 * @return la salida de las reservas
@@ -183,7 +183,7 @@ public class Reservas {
 			representar[i] = coleccionReservas[i].toString();
 		return representar;
 	}
-	
+
 	/**
 	 * Obtiene las reservas a nombre de un profesor indicado
 	 * @param profesor el profesor que ha reservado
@@ -203,7 +203,7 @@ public class Reservas {
 		}
 		return devolver;
 	}
-	
+
 	/**
 	 * Obtiene las reservas realizadas a un aula indicada
 	 * @param aula el aula reservada
@@ -223,7 +223,7 @@ public class Reservas {
 		}
 		return devolver;
 	}
-	
+
 	/**
 	 * Obtiene las reservas realizadas en una fecha y tramo concretos
 	 * @param permanencia la fecha y el tramo de las reservas
@@ -243,7 +243,7 @@ public class Reservas {
 		}
 		return devolver;
 	}
-	
+
 	/**
 	 * Comprueba si un aula está disponible en una fecha y tramos indicados
 	 * @param aula el aula a comprobar

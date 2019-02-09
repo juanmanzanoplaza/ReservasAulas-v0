@@ -10,7 +10,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Reserva;
 
 /**
  * 
- * Clase encargada de tratar las excepciones y llamar a las distintas funciones del modelo {@link ModeloReservasAulas}
+ * Clase encargada de tratar las excepciones y llamar a las distintas funciones del modelo ModeloReservasAulas
  * @see ModeloReservasAulas
  * @author Juan Antonio Manzano Plaza
  * @version 0
@@ -47,14 +47,14 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden salir de {@link Opcion}
+	 * Ejecuta la orden salir de Opcion
 	 */
 	public void salir() {
 		System.out.println("Fin de la ejecución.");
 	}
 
 	/**
-	 * Ejecuta la orden insertarAula de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden insertarAula de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void insertarAula() {
 		Consola.mostrarCabecera("INSERTAR AULA");
@@ -67,7 +67,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden borrarAula de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden borrarAula de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void borrarAula() {
 		Consola.mostrarCabecera("BORRAR AULA");
@@ -82,7 +82,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden buscarAula de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden buscarAula de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void buscarAula() {
 		Consola.mostrarCabecera("BUSCAR AULA");
@@ -95,7 +95,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarAulas de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden listarAulas de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void listarAulas() {
 		Consola.mostrarCabecera("LISTAR AULAS");
@@ -107,7 +107,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden insertarProfesor de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden insertarProfesor de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void insertarProfesor() {
 		Consola.mostrarCabecera("INSERTAR PROFESOR");
@@ -120,7 +120,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden borrarProfesor de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden borrarProfesor de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void borrarProfesor() {
 		Consola.mostrarCabecera("BORRAR PROFESOR");
@@ -134,7 +134,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden buscarProfesor de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden buscarProfesor de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void buscarProfesor() {
 		Consola.mostrarCabecera("BUSCAR PROFESOR");
@@ -147,7 +147,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarProfesores de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden listarProfesores de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void listarProfesores() {
 		Consola.mostrarCabecera("LISTAR PROFESORES");
@@ -159,7 +159,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden realizarReserva de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden realizarReserva de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void realizarReserva() {
 		Consola.mostrarCabecera("REALIZAR RESERVA");
@@ -203,7 +203,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden anularReserva de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden anularReserva de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void anularReserva() {
 		Consola.mostrarCabecera("ANULAR RESERVA");
@@ -232,7 +232,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarReservas de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden listarReservas de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void listarReservas() {
 		Consola.mostrarCabecera("LISTAR RESERVAS");
@@ -244,7 +244,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarReservasAula de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden listarReservasAula de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void listarReservasAula() {
 		Consola.mostrarCabecera("LISTAR RESERVAS AULA");
@@ -264,14 +264,14 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarReservasProfesor de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden listarReservasProfesor de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void listarReservasProfesor() {
 		Consola.mostrarCabecera("LISTAR RESERVAS PROFESOR");
 		Profesor profesor = new Profesor(Consola.leerNombreProfesor(), CORREO_VALIDO);
 		boolean lecturaCorrecta = true;
 		if(modelo.buscarProfesor(profesor)==null){
-			System.out.println(ERROR + "El profesor introducida no existe.");
+			System.out.println(ERROR + "El profesor introducido no existe.");
 			lecturaCorrecta = false;
 		}
 		Reserva[] reservas = modelo.getReservasProfesor(profesor);
@@ -284,7 +284,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarReservasPermanencia de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden listarReservasPermanencia de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void listarReservasPermanencia() {
 		Consola.mostrarCabecera("LISTAR RESERVAS PERMANENCIA");
@@ -297,7 +297,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden consultarDisponibilidad de {@link Opcion} llamando al método correspondiente de {@link ModeloReservasAulas}
+	 * Ejecuta la orden consultarDisponibilidad de Opcion llamando al método correspondiente de ModeloReservasAulas
 	 */
 	public void consultarDisponibilidad() {
 		Consola.mostrarCabecera("CONSULTAR DISPONIBILIDAD");
