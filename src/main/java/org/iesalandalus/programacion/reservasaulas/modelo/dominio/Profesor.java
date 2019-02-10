@@ -26,6 +26,7 @@ public class Profesor {
 	public Profesor(String nombre, String correo) {
 		setNombre(nombre);
 		setCorreo(correo);
+		setTelefono(null);
 	}
 
 	/**
@@ -45,7 +46,7 @@ public class Profesor {
 	 * @param otro el profesor a copiar
 	 * @throws IllegalArgumentException si el profesor a copiar es nulo
 	 */
-	public Profesor(Profesor otro) {
+	public Profesor(Profesor otro) throws IllegalArgumentException {
 		if(otro==null)
 			throw new IllegalArgumentException("No se puede copiar un profesor nulo.");
 		setNombre(otro.getNombre());
@@ -59,7 +60,7 @@ public class Profesor {
 	 * @param nombre el nombre del profesor
 	 * @throws IllegalArgumentException si el nombre es nulo o vacío
 	 */
-	private void setNombre(String nombre) {
+	private void setNombre(String nombre) throws IllegalArgumentException {
 		if(nombre==null)
 			throw new IllegalArgumentException("El nombre del profesor no puede ser nulo.");
 		if(nombre.equals(""))
@@ -73,7 +74,7 @@ public class Profesor {
 	 * @param correo el correo del profesor
 	 * @throws IllegalArgumentException si el correo es nulo o no es un correo con formato válido
 	 */
-	public void setCorreo(String correo) {
+	public void setCorreo(String correo) throws IllegalArgumentException {
 		if(correo==null)
 			throw new IllegalArgumentException("El correo del profesor no puede ser nulo.");
 		Pattern p = Pattern.compile(ER_CORREO);
@@ -90,7 +91,7 @@ public class Profesor {
 	 * @param telefono el telefono del profesor
 	 * @throws IllegalArgumentException si el teléfono no tiene un formato válido
 	 */
-	public void setTelefono(String telefono) {
+	public void setTelefono(String telefono) throws IllegalArgumentException {
 		if(telefono==null) {
 			this.telefono = null;
 		} else {

@@ -30,8 +30,9 @@ public class Reserva {
 	/**
 	 * Constructor copia de la clase
 	 * @param otra la reserva a copiar
+	 * @throws IllegalArgumentException si la reserva a copiar es nula
 	 */
-	public Reserva(Reserva otra) {
+	public Reserva(Reserva otra) throws IllegalArgumentException {
 		if(otra == null)
 			throw new IllegalArgumentException("No se puede copiar una reserva nula.");
 		setProfesor(otra.getProfesor());
@@ -44,7 +45,7 @@ public class Reserva {
 	 * @param profesor el profesor que realiza la reserva
 	 * @throws IllegalArgumentException si el profesor es nulo
 	 */
-	private void setProfesor(Profesor profesor) {
+	private void setProfesor(Profesor profesor) throws IllegalArgumentException {
 		if(profesor == null)
 			throw new IllegalArgumentException("La reserva debe estar a nombre de un profesor.");
 		this.profesor = new Profesor(profesor);
@@ -62,7 +63,7 @@ public class Reserva {
 	 * Método set para el aula de la reserva
 	 * @param aula el aula reservada
 	 */
-	private void setAula(Aula aula) {
+	private void setAula(Aula aula) throws IllegalArgumentException {
 		if(aula == null)
 			throw new IllegalArgumentException("La reserva debe ser para un aula concreta.");
 		this.aula = new Aula(aula);
@@ -81,7 +82,7 @@ public class Reserva {
 	 * @param permanencia la permanencia de la reserva
 	 * @throws IllegalArgumentException si la permanencia es nula
 	 */
-	private void setPermanencia(Permanencia permanencia) {
+	private void setPermanencia(Permanencia permanencia) throws IllegalArgumentException {
 		if(permanencia == null)
 			throw new IllegalArgumentException("La reserva se debe hacer para una permanencia concreta.");
 		this.permanencia = new Permanencia(permanencia);

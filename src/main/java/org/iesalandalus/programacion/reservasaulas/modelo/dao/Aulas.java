@@ -37,7 +37,7 @@ public class Aulas {
 	 * @param aulas la colección a copiar
 	 * @throws IllegalArgumentException si se intenta copiar un conjunto de aulas nulas
 	 */
-	private void setAulas(Aulas aulas) {
+	private void setAulas(Aulas aulas) throws IllegalArgumentException {
 		if(aulas==null)
 			throw new IllegalArgumentException("No se pueden copiar aulas nulas.");
 		this.coleccionAulas = copiaProfundaAulas(aulas.getAulas());
@@ -77,7 +77,7 @@ public class Aulas {
 	 * @throws IllegalArgumentException si el aula es nula
 	 * @throws OperationNotSupportedException si el aula ya existe o se supera la capacidad
 	 */
-	public void insertar(Aula aula) throws OperationNotSupportedException {
+	public void insertar(Aula aula) throws OperationNotSupportedException, IllegalArgumentException {
 		if(aula==null)
 			throw new IllegalArgumentException("No se puede insertar un aula nula.");
 		int indice = buscarIndiceAula(aula);
@@ -149,7 +149,7 @@ public class Aulas {
 	 * @throws IllegalArgumentException si el aula es nula
 	 * @throws OperationNotSupportedException si el aula no existe
 	 */
-	public void borrar(Aula aula) throws OperationNotSupportedException {
+	public void borrar(Aula aula) throws OperationNotSupportedException, IllegalArgumentException {
 		if(aula==null)
 			throw new IllegalArgumentException("No se puede borrar un aula nula.");
 		int indice = buscarIndiceAula(aula);

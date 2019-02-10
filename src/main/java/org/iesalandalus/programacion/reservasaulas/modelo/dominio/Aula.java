@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Aula {
 
 	private String nombre;
-	
+
 	/**
 	 * Constructor de la clase
 	 * @param nombre el nombre del aula
@@ -19,30 +19,30 @@ public class Aula {
 	public Aula(String nombre) {
 		setNombre(nombre);
 	}
-	
+
 	/**
 	 * Constructor copia
 	 * @param otra el aula a copiar
 	 */
-	public Aula(Aula otra) {
+	public Aula(Aula otra) throws IllegalArgumentException {
 		if(otra==null)
 			throw new IllegalArgumentException("No se puede copiar un aula nula.");
 		setNombre(otra.getNombre());
 	}
-	
+
 	/**
 	 * Método set para el nombre del aula
 	 * @param nombre el nombre del aula
 	 * @throws IllegalArgumentException si el nombre es nulo o vacío
 	 */
-	private void setNombre(String nombre) {
+	private void setNombre(String nombre) throws IllegalArgumentException {
 		if(nombre==null)
 			throw new IllegalArgumentException("El nombre del aula no puede ser nulo.");
 		if(nombre.equals(""))
 			throw new IllegalArgumentException("El nombre del aula no puede estar vacío.");
 		this.nombre = nombre;
 	}
-	
+
 	/**
 	 * Método get para el nombre del aula
 	 * @return el nombre del aula
@@ -50,7 +50,7 @@ public class Aula {
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	/**
 	 * Método hashCode de la clase. Sirve para diferenciar objetos
 	 * @return el código hash del objeto
@@ -58,7 +58,7 @@ public class Aula {
 	public int hashCode() {
 		return Objects.hash(nombre);
 	}
-	
+
 	/**
 	 * Método equals de la clase
 	 * @return True si son iguales, False si no
@@ -73,7 +73,7 @@ public class Aula {
 			return true;
 		return false;
 	}
-	
+
 	/**
 	 * Representa un aula como una cadena de caracteres
 	 * @return la representación del aula

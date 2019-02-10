@@ -110,20 +110,20 @@ public enum Opcion {
 	}
 
 	/**
-	 * Llama al método correspondiente a la opción de la clase {@link IUTextual}
+	 * Llama al método correspondiente a la opción de la clase IUTextual
 	 */
 	public abstract void ejecutar();
 
 	/**
 	 * Método set que inicializa la variable vista
-	 * @param iutextual objeto de la clase {@link IUTextual} sobre el que se van a realizar las opciones
+	 * @param iutextual objeto de la clase IUTextual sobre el que se van a realizar las opciones
 	 */
 	protected static void setVista(IUTextual iutextual) {
 		vista = iutextual;
 	}
 
 	/**
-	 * Define como debe mostrarse un objeto {@link Opcion}
+	 * Define como debe mostrarse un objeto Opcion
 	 * @return mensajeAMostrar el título de la opción
 	 */
 	public String toString() {
@@ -140,7 +140,7 @@ public enum Opcion {
 	}
 
 	/**
-	 * Comprueba si un ordinal está dentro del rango de valores de {@link Opcion}
+	 * Comprueba si un ordinal está dentro del rango de valores de Opcion
 	 * @param ordinal el valor de la opción que se desea seleccionar
 	 * @return True si el valor está dentro del rango, False si no
 	 */

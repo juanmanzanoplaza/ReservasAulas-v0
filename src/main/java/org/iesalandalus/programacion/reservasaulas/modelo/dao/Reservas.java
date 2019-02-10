@@ -40,7 +40,7 @@ public class Reservas {
 	 * @param reservas la colección a copiar
 	 * @throws IllegalArgumentException si se intenta copiar un conjunto de reservas nulo
 	 */
-	private void setReservas(Reservas reservas) {
+	private void setReservas(Reservas reservas) throws IllegalArgumentException {
 		if(reservas==null)
 			throw new IllegalArgumentException("No se pueden copiar reservas nulas.");
 		this.coleccionReservas = copiaProfundaReservas(reservas.coleccionReservas);
@@ -80,7 +80,7 @@ public class Reservas {
 	 * @throws IllegalArgumentException si la reserva es nula
 	 * @throws OperationNotSupportedException si la reserva ya existe o se supera la capacidad
 	 */
-	public void insertar(Reserva reserva) throws OperationNotSupportedException {
+	public void insertar(Reserva reserva) throws OperationNotSupportedException, IllegalArgumentException{
 		if(reserva==null)
 			throw new IllegalArgumentException("No se puede realizar una reserva nula.");
 		int indice = buscarIndiceReserva(reserva);
@@ -151,7 +151,7 @@ public class Reservas {
 	 * @throws IllegalArgumentException si la reserva es nula
 	 * @throws OperationNotSupportedException si la reserva no existe
 	 */
-	public void borrar(Reserva reserva) throws OperationNotSupportedException {
+	public void borrar(Reserva reserva) throws OperationNotSupportedException, IllegalArgumentException {
 		if(reserva==null)
 			throw new IllegalArgumentException("No se puede anular una reserva nula.");
 		int indice = buscarIndiceReserva(reserva);
@@ -190,7 +190,7 @@ public class Reservas {
 	 * @return las reservas del profesor
 	 * @throws IllegalArgumentException si el profesor es nulo
 	 */
-	public Reserva[] getReservasProfesor(Profesor profesor) {
+	public Reserva[] getReservasProfesor(Profesor profesor) throws IllegalArgumentException {
 		if(profesor==null)
 			throw new IllegalArgumentException("No se pueden comprobar las reservas de un profesor nulo.");
 		Reserva[] devolver = new Reserva[MAX_RESERVAS];
@@ -210,7 +210,7 @@ public class Reservas {
 	 * @return las reservas del aula
 	 * @throws IllegalArgumentException si el aula es nula
 	 */
-	public Reserva[] getReservasAula(Aula aula) {
+	public Reserva[] getReservasAula(Aula aula) throws IllegalArgumentException {
 		if(aula==null)
 			throw new IllegalArgumentException("No se pueden comprobar las reservas realizadas sobre un aula nula.");
 		Reserva[] devolver = new Reserva[MAX_RESERVAS];
@@ -230,7 +230,7 @@ public class Reservas {
 	 * @return las reservas de esa fecha y tramo
 	 * @throws IllegalArgumentException si la permanencia es nula
 	 */
-	public Reserva[] getReservasPermanencia(Permanencia permanencia) {
+	public Reserva[] getReservasPermanencia(Permanencia permanencia) throws IllegalArgumentException {
 		if(permanencia==null)
 			throw new IllegalArgumentException("No se pueden consultar las reservas de una permanencia nula.");
 		Reserva[] devolver = new Reserva[MAX_RESERVAS];
@@ -250,7 +250,7 @@ public class Reservas {
 	 * @param permanencia la fecha y tramo en las que comprobar el aula
 	 * @return True si está disponible, False si está reservada
 	 */
-	public boolean consultarDisponibilidad(Aula aula, Permanencia permanencia) {
+	public boolean consultarDisponibilidad(Aula aula, Permanencia permanencia) throws IllegalArgumentException {
 		if(aula==null)
 			throw new IllegalArgumentException("No se puede consultar la disponibilidad de un aula nula.");
 		if(permanencia==null)

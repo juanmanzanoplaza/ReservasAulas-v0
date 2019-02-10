@@ -38,7 +38,7 @@ public class Profesores {
 	 * @param profesores la colección a copiar
 	 * @throws IllegalArgumentException si se intenta copiar un conjunto de profesores nulos
 	 */
-	private void setProfesores(Profesores profesores) {
+	private void setProfesores(Profesores profesores) throws IllegalArgumentException {
 		if(profesores==null)
 			throw new IllegalArgumentException("No se pueden copiar profesores nulos.");
 		this.coleccionProfesores = copiaProfundaProfesores(profesores.getProfesores());
@@ -78,7 +78,7 @@ public class Profesores {
 	 * @throws IllegalArgumentException si el profesor es nulo
 	 * @throws OperationNotSupportedException si el profesor ya existe o se supera la capacidad
 	 */
-	public void insertar(Profesor profesor) throws OperationNotSupportedException {
+	public void insertar(Profesor profesor) throws OperationNotSupportedException, IllegalArgumentException {
 		if(profesor==null)
 			throw new IllegalArgumentException("No se puede insertar un profesor nulo.");
 		int indice = buscarIndiceProfesor(profesor);
@@ -149,7 +149,7 @@ public class Profesores {
 	 * @throws IllegalArgumentException si el profesor es nulo
 	 * @throws OperationNotSupportedException si el profesor no existe
 	 */
-	public void borrar(Profesor profesor) throws OperationNotSupportedException {
+	public void borrar(Profesor profesor) throws OperationNotSupportedException, IllegalArgumentException {
 		if(profesor==null)
 			throw new IllegalArgumentException("No se puede borrar un profesor nulo.");
 		int indice = buscarIndiceProfesor(profesor);

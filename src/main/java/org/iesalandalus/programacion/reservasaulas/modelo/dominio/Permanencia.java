@@ -30,7 +30,7 @@ public class Permanencia {
 	 * Constructor copia
 	 * @param p la permanencia a copiar
 	 */
-	public Permanencia(Permanencia p) {
+	public Permanencia(Permanencia p) throws IllegalArgumentException {
 		if(p==null)
 			throw new IllegalArgumentException("No se puede copiar una permanencia nula.");
 		setDia(p.getDia());
@@ -50,7 +50,7 @@ public class Permanencia {
 	 * @param dia el día de la reserva
 	 * @throws IllegalArgumentException si el día es nulo
 	 */
-	private void setDia(LocalDate dia) {
+	private void setDia(LocalDate dia) throws IllegalArgumentException {
 		if(dia==null)
 			throw new IllegalArgumentException("El día de una permanencia no puede ser nulo.");
 		this.dia = LocalDate.of(dia.getYear(), dia.getMonth(), dia.getDayOfMonth());
@@ -69,7 +69,7 @@ public class Permanencia {
 	 * @param tramo el tramo de la reserva
 	 * @throws IllegalArgumentException si el tramo es nulo
 	 */
-	private void setTramo(Tramo tramo) {
+	private void setTramo(Tramo tramo) throws IllegalArgumentException {
 		if(tramo == null)
 			throw new IllegalArgumentException("El tramo de una permanencia no puede ser nulo.");
 		this.tramo = tramo;

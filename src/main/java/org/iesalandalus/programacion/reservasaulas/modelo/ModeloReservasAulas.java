@@ -75,7 +75,7 @@ public class ModeloReservasAulas {
 	 * @param insertar el aula que queremos guardar
 	 * @throws OperationNotSupportedException si se intenta insertar un aula nula, ya existente o se ha superado la capacidad
 	 */
-	public void insertarAula(Aula insertar) throws OperationNotSupportedException {
+	public void insertarAula(Aula insertar) throws OperationNotSupportedException, IllegalArgumentException {
 		aulas.insertar(insertar);
 	}
 	
@@ -84,7 +84,7 @@ public class ModeloReservasAulas {
 	 * @param borrar el aula que queremos borrar
 	 * @throws OperationNotSupportedException si se intenta borrar un aula nula o que no existe
 	 */
-	public void borrarAula(Aula borrar) throws OperationNotSupportedException {
+	public void borrarAula(Aula borrar) throws OperationNotSupportedException, IllegalArgumentException {
 		aulas.borrar(borrar);
 	}
 	
@@ -126,7 +126,7 @@ public class ModeloReservasAulas {
 	 * @param insertar el profesor que queremos guardar
 	 * @throws OperationNotSupportedException si se intenta insertar un profesor nulo, ya existente o se ha superado la capacidad
 	 */
-	public void insertarProfesor(Profesor insertar) throws OperationNotSupportedException {
+	public void insertarProfesor(Profesor insertar) throws OperationNotSupportedException, IllegalArgumentException {
 		profesores.insertar(insertar);
 	}
 	
@@ -135,7 +135,7 @@ public class ModeloReservasAulas {
 	 * @param borrar el profesor que queremos borrar
 	 * @throws OperationNotSupportedException si se intenta borrar un profesor nulo o que no existe
 	 */
-	public void borrarProfesor(Profesor borrar) throws OperationNotSupportedException {
+	public void borrarProfesor(Profesor borrar) throws OperationNotSupportedException, IllegalArgumentException {
 		profesores.borrar(borrar);
 	}
 	
@@ -177,7 +177,7 @@ public class ModeloReservasAulas {
 	 * @param realizar la reserva a realizar
 	 * @throws OperationNotSupportedException si se intenta realizar una reserva nula, ya existente o se ha superado la capacidad
 	 */
-	public void realizarReserva(Reserva realizar) throws OperationNotSupportedException {
+	public void realizarReserva(Reserva realizar) throws OperationNotSupportedException, IllegalArgumentException {
 		reservas.insertar(realizar);
 	}
 	
@@ -186,7 +186,7 @@ public class ModeloReservasAulas {
 	 * @param anular la reserva a anular
 	 * @throws OperationNotSupportedException si se intenta anular una reserva nula o que no existe
 	 */
-	public void anularReserva(Reserva anular) throws OperationNotSupportedException {
+	public void anularReserva(Reserva anular) throws OperationNotSupportedException, IllegalArgumentException {
 		reservas.borrar(anular);
 	}
 	
@@ -195,7 +195,7 @@ public class ModeloReservasAulas {
 	 * @param aula el aula sobre la que están hechas las reservas
 	 * @return un array con todas las reservas sobre el aula indicada
 	 */
-	public Reserva[] getReservasAula(Aula aula) {
+	public Reserva[] getReservasAula(Aula aula) throws IllegalArgumentException {
 		return reservas.getReservasAula(aula);
 	}
 	
@@ -204,7 +204,7 @@ public class ModeloReservasAulas {
 	 * @param profesor el profesor a nombre del que están hechas las reservas
 	 * @return un array con todas las reservas a nombre del profesor indicado
 	 */
-	public Reserva[] getReservasProfesor(Profesor profesor) {
+	public Reserva[] getReservasProfesor(Profesor profesor) throws IllegalArgumentException {
 		return reservas.getReservasProfesor(profesor);
 	}
 	
@@ -213,7 +213,7 @@ public class ModeloReservasAulas {
 	 * @param permanencia la fecha de las reservas
 	 * @return un array con todas las reservas de ese día y tramo
 	 */
-	public Reserva[] getReservasPermanencia(Permanencia permanencia) {
+	public Reserva[] getReservasPermanencia(Permanencia permanencia) throws IllegalArgumentException {
 		return reservas.getReservasPermanencia(permanencia);
 	}
 	
@@ -223,7 +223,7 @@ public class ModeloReservasAulas {
 	 * @param permanencia el día que queremos comprobar si está reservada el aula
 	 * @return True si está disponible (no está reservada) y False si no está disponible (está reservada)
 	 */
-	public boolean consultarDisponibilidad(Aula aula, Permanencia permanencia) {
+	public boolean consultarDisponibilidad(Aula aula, Permanencia permanencia) throws IllegalArgumentException {
 		return reservas.consultarDisponibilidad(aula, permanencia);
 	}
 
