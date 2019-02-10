@@ -3,15 +3,13 @@ package org.iesalandalus.programacion.reservasaulas.vista;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Iterator;
-
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Tramo;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 /**
- * 
+ *
  * Clase dedicada a la interacción con el usuario. Pide y valida los datos por teclado.
  * @see IUTextual
  * @see Opcion
