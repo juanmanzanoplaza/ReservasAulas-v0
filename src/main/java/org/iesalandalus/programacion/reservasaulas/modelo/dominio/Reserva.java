@@ -11,9 +11,9 @@ import java.util.Objects;
  * @version 0
  */
 public class Reserva {
-	Profesor profesor;
-	Aula aula;
-	Permanencia permanencia;
+	private Profesor profesor;
+	private Aula aula;
+	private Permanencia permanencia;
 
 	/**
 	 * Constructor de la clase

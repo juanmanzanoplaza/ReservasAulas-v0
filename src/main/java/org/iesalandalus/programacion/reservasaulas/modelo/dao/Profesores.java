@@ -42,6 +42,7 @@ public class Profesores {
 		if(profesores==null)
 			throw new IllegalArgumentException("No se pueden copiar profesores nulos.");
 		this.coleccionProfesores = copiaProfundaProfesores(profesores.getProfesores());
+		this.numProfesores = profesores.getNumProfesores();
 	}
 
 	/**

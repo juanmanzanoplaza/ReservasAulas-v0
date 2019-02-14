@@ -41,6 +41,7 @@ public class Aulas {
 		if(aulas==null)
 			throw new IllegalArgumentException("No se pueden copiar aulas nulas.");
 		this.coleccionAulas = copiaProfundaAulas(aulas.getAulas());
+		this.numAulas = aulas.getNumAulas();
 	}
 
 	/**

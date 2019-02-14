@@ -44,6 +44,7 @@ public class Reservas {
 		if(reservas==null)
 			throw new IllegalArgumentException("No se pueden copiar reservas nulas.");
 		this.coleccionReservas = copiaProfundaReservas(reservas.coleccionReservas);
+		this.numReservas = reservas.getNumReservas();
 	}
 
 	/**
