@@ -18,7 +18,7 @@ public class Permanencia {
 
 	/**
 	 * Constructor de la clase
-	 * @param dia el día de la reserva
+	 * @param dia el dÃ­a de la reserva
 	 * @param tramo el tramo de la reserva
 	 */
 	public Permanencia(LocalDate dia, Tramo tramo) {
@@ -38,26 +38,26 @@ public class Permanencia {
 	}
 
 	/**
-	 * Método get para el día de la reserva
-	 * @return el día de la reserva
+	 * MÃ©todo get para el dÃ­a de la reserva
+	 * @return el dÃ­a de la reserva
 	 */
 	public LocalDate getDia() {
 		return LocalDate.of(dia.getYear(), dia.getMonth(), dia.getDayOfMonth());
 	}
 
 	/**
-	 * Método set para el día de la reserva
-	 * @param dia el día de la reserva
-	 * @throws IllegalArgumentException si el día es nulo
+	 * MÃ©todo set para el dÃ­a de la reserva
+	 * @param dia el dÃ­a de la reserva
+	 * @throws IllegalArgumentException si el dÃ­a es nulo
 	 */
 	private void setDia(LocalDate dia) throws IllegalArgumentException {
 		if(dia==null)
-			throw new IllegalArgumentException("El día de una permanencia no puede ser nulo.");
+			throw new IllegalArgumentException("El dÃ­a de una permanencia no puede ser nulo.");
 		this.dia = LocalDate.of(dia.getYear(), dia.getMonth(), dia.getDayOfMonth());
 	}
 
 	/**
-	 * Método get para el tramo de la reserva
+	 * MÃ©todo get para el tramo de la reserva
 	 * @return el tramo de la reserva
 	 */
 	public Tramo getTramo() {
@@ -65,7 +65,7 @@ public class Permanencia {
 	}
 
 	/**
-	 * Método set para el tramo de la reserva
+	 * Mï¿½todo set para el tramo de la reserva
 	 * @param tramo el tramo de la reserva
 	 * @throws IllegalArgumentException si el tramo es nulo
 	 */
@@ -76,15 +76,15 @@ public class Permanencia {
 	}
 
 	/**
-	 * Método hashCode de la clase. Sirve para diferenciar objetos
-	 * @return el código hash del objeto
+	 * MÃ©todo hashCode de la clase. Sirve para diferenciar objetos
+	 * @return el cÃ³digo hash del objeto
 	 */
 	public int hashCode() {
 		return Objects.hash(dia, tramo);
 	}
 
 	/**
-	 * Método equals de la clase
+	 * MÃ©todo equals de la clase
 	 * @return True si son iguales, False si no
 	 */
 	public boolean equals(Object o) {
@@ -100,7 +100,7 @@ public class Permanencia {
 
 	/**
 	 * Representa una permanencia como una cadena de caracteres
-	 * @return la representación de la permanencia
+	 * @return la representaciÃ³n de la permanencia
 	 */
 	public String toString() {
 		return "[dia=" + getDia().format(FORMATO_DIA) + ", tramo=" + getTramo() + "]";

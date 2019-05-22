@@ -19,7 +19,7 @@ public class Reserva {
 	 * Constructor de la clase
 	 * @param profesor el profesor que reserva el aula
 	 * @param aula el aula que es reservada
-	 * @param permanencia el día y el tramo en el que es reservada
+	 * @param permanencia el dÃ­a y el tramo en el que es reservada
 	 */
 	public Reserva(Profesor profesor, Aula aula, Permanencia permanencia) {
 		setProfesor(profesor);
@@ -41,7 +41,7 @@ public class Reserva {
 	}
 
 	/**
-	 * Método set para el profesor de la reserva
+	 * MÃ©todo set para el profesor de la reserva
 	 * @param profesor el profesor que realiza la reserva
 	 * @throws IllegalArgumentException si el profesor es nulo
 	 */
@@ -52,7 +52,7 @@ public class Reserva {
 	}
 
 	/**
-	 * Método get para el profesor de la reserva
+	 * MÃ©todo get para el profesor de la reserva
 	 * @return el profesor de la reserva
 	 */
 	public Profesor getProfesor() {
@@ -60,7 +60,7 @@ public class Reserva {
 	}
 
 	/**
-	 * Método set para el aula de la reserva
+	 * MÃ©todo set para el aula de la reserva
 	 * @param aula el aula reservada
 	 */
 	private void setAula(Aula aula) throws IllegalArgumentException {
@@ -70,7 +70,7 @@ public class Reserva {
 	}
 
 	/**
-	 * Método get para el aula de la reserva
+	 * MÃ©todo get para el aula de la reserva
 	 * @return el aula de la reserva
 	 */
 	public Aula getAula() {
@@ -78,7 +78,7 @@ public class Reserva {
 	}
 
 	/**
-	 * Método set para la permanencia de la reserva
+	 * MÃ©todo set para la permanencia de la reserva
 	 * @param permanencia la permanencia de la reserva
 	 * @throws IllegalArgumentException si la permanencia es nula
 	 */
@@ -89,7 +89,7 @@ public class Reserva {
 	}
 
 	/**
-	 * Método get para la permanencia de la reserva
+	 * MÃ©todo get para la permanencia de la reserva
 	 * @return la permanencia de la reserva
 	 */
 	public Permanencia getPermanencia() {
@@ -97,15 +97,15 @@ public class Reserva {
 	}
 
 	/**
-	 * Método hashCode de la clase. Sirve para diferenciar objetos
-	 * @return el código hash del objeto
+	 * MÃ©todo hashCode de la clase. Sirve para diferenciar objetos
+	 * @return el cÃ³digo hash del objeto
 	 */
 	public int hashCode() {
 		return Objects.hash(profesor, aula, permanencia);
 	}
 
 	/**
-	 * Método equals de la clase
+	 * MÃ©todo equals de la clase
 	 * @return True si son iguales, False si no
 	 */
 	public boolean equals(Object o) {
@@ -121,7 +121,7 @@ public class Reserva {
 
 	/**
 	 * Representa una reserva como una cadena de caracteres
-	 * @return la representación de la reserva
+	 * @return la representaciÃ³n de la reserva
 	 */
 	public String toString() {
 		return "[profesor=" + getProfesor() + ", aula=" + getAula() + ", permanencia=" + getPermanencia() + "]";

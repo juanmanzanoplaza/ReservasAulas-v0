@@ -10,7 +10,7 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 
 /**
  *
- * Clase dedicada a la interacciÛn con el usuario. Pide y valida los datos por teclado.
+ * Clase dedicada a la interacci√≥n con el usuario. Pide y valida los datos por teclado.
  * @see IUTextual
  * @see Opcion
  * @author Juan Antonio Manzano Plaza
@@ -28,11 +28,11 @@ public class Consola {
 	}
 
 	/**
-	 * MÈtodo est·tico encargado de mostrar por pantalla todas las opciones de Opcion
+	 * MÔøΩtodo est√°tico encargado de mostrar por pantalla todas las opciones de Opcion
 	 */
 	public static void mostrarMenu() {
 		System.out.println("*************************************************************");
-		System.out.println("*           RESERVAS DE AULAS DEL IES AL-¡NDALUS            *");
+		System.out.println("*           RESERVAS DE AULAS DEL IES AL-√ÅNDALUS            *");
 		System.out.println("*************************************************************");
 		int i = 0;
 		for (Opcion o: Opcion.values()) {
@@ -43,21 +43,21 @@ public class Consola {
 	}
 
 	/**
-	 * Imprime por pantalla el tÌtulo de la opciÛn seleccionada.
-	 * @param cabecera el tÌtulo de la opciÛn
+	 * Imprime por pantalla el t√≠tulo de la opci√≥n seleccionada.
+	 * @param cabecera el t√≠tulo de la opci√≥n
 	 */
 	public static void mostrarCabecera(String cabecera) {
 		System.out.println(cabecera);
 	}
 
 	/**
-	 * Lee por consola el valor ordinal de la opciÛn que desea realizarse.
-	 * @return el valor ordinal de la opciÛn a realizar
+	 * Lee por consola el valor ordinal de la opci√≥n que desea realizarse.
+	 * @return el valor ordinal de la opci√≥n a realizar
 	 */
 	public static int elegirOpcion() {
 		int opcion;
 		do {
-			System.out.println("øQuÈ opciÛn desea elegir?:");
+			System.out.println("¬øQu√© opci√≥n desea elegir?:");
 			opcion = Entrada.entero();
 		} while(!Opcion.esOrdinalValido(opcion));
 		return opcion;
@@ -65,14 +65,14 @@ public class Consola {
 
 	/**
 	 * Lee por consola el nombre de un aula y la crea.
-	 * @return el aula leÌda
+	 * @return el aula le√≠da
 	 */
 	public static Aula leerAula() {
 		Aula leida = null;
 		do {
 			try {
 				leida = new Aula(leerNombreAula());
-				System.out.println("Aula leÌda correctamente.");
+				System.out.println("Aula le√≠da correctamente.");
 			} catch (IllegalArgumentException e) {
 				System.out.println(e.getMessage());
 			}
@@ -82,7 +82,7 @@ public class Consola {
 
 	/**
 	 * Lee por consola el nombre de un aula.
-	 * @return el nombre leÌdo
+	 * @return el nombre le√≠do
 	 */
 	public static String leerNombreAula() {
 		String nombre;
@@ -95,22 +95,22 @@ public class Consola {
 
 	/**
 	 * Lee por consola todos los atributos de un profesor y lo crea.
-	 * @return el profesor leÌdo
+	 * @return el profesor le√≠do
 	 */
 	public static Profesor leerProfesor() {
 		Profesor leido = null;
 		do {
 			try {
 				String nombre = leerNombreProfesor();
-				System.out.println("Introduzca el correo electrÛnico del profesor:");
+				System.out.println("Introduzca el correo electr√≥nico del profesor:");
 				String correo = Entrada.cadena();
-				System.out.println("Introduzca el telÈfono del profesor (Puede dejarse vacÌo):");
+				System.out.println("Introduzca el tel√©fono del profesor (Puede dejarse vac√≠o):");
 				String telefono = Entrada.cadena();
 				if(telefono.equals(""))
 					leido = new Profesor(nombre, correo);
 				else
 					leido = new Profesor(nombre, correo, telefono);
-				System.out.println("Profesor leÌdo correctamente.");
+				System.out.println("Profesor le√≠do correctamente.");
 			} catch (IllegalArgumentException e) {
 				System.out.println(e.getMessage());
 			}
@@ -120,7 +120,7 @@ public class Consola {
 
 	/**
 	 * Lee por consola el nombre de un profesor.
-	 * @return el nombre leÌdo
+	 * @return el nombre le√≠do
 	 */
 	public static String leerNombreProfesor() {
 		String nombre;
@@ -132,15 +132,15 @@ public class Consola {
 	}
 
 	/**
-	 * Lee por consola un tramo. En esta versiÛn sÛlo est·n las opciones de maÒana (0) y de tarde (1)
-	 * Si aÒadimos m·s opciones a Tramo
-	 * ser· necesario cambiar la salida por pantalla, pero no el bucle ni el return.
-	 * @return el tramo horario leÌdo
+	 * Lee por consola un tramo. En esta versi√≥n s√≥lo est√°n las opciones de ma√±ana (0) y de tarde (1)
+	 * Si a√±adimos m√°s opciones a Tramo
+	 * ser√° necesario cambiar la salida por pantalla, pero no el bucle ni el return.
+	 * @return el tramo horario le√≠do
 	 */
 	public static Tramo leerTramo() {
 		int opcion;
 		do {
-			System.out.println("øTramo de maÒana(0) o de tarde(1)?:");
+			System.out.println("¬øTramo de ma√±ana(0) o de tarde(1)?:");
 			opcion = Entrada.entero();
 		} while(opcion<0 || opcion>Tramo.values().length);
 		return Tramo.values()[opcion];
@@ -148,8 +148,8 @@ public class Consola {
 	}
 
 	/**
-	 * Lee una fecha con un formato especÌfico.
-	 * @return la fecha leÌda
+	 * Lee una fecha con un formato espec√≠fico.
+	 * @return la fecha le√≠da
 	 */
 	public static LocalDate leerDia() {
 		LocalDate leido = null;
@@ -158,7 +158,7 @@ public class Consola {
 			try {
 				leido = LocalDate.parse(Entrada.cadena(), FORMATO_DIA);
 			} catch (DateTimeParseException e) {
-				System.out.println("La fecha introducida no est· en el formato correcto o no es v·lida.");
+				System.out.println("La fecha introducida no est√° en el formato correcto o no es v√°lida.");
 			}
 		} while (leido == null);
 		return leido;

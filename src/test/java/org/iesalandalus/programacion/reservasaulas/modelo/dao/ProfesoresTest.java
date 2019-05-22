@@ -12,14 +12,14 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 import org.junit.Test;
 
 public class ProfesoresTest {
-	private static final String NOMBRE_PROFESOR1 = "José Ramón";
-	private static final String NOMBRE_PROFESOR2 = "Andrés";
-	private static final String NOMBRE_PROFESOR3 = "Begoña";
+	private static final String NOMBRE_PROFESOR1 = "JosÃ© RamÃ³n";
+	private static final String NOMBRE_PROFESOR2 = "AndrÃ©s";
+	private static final String NOMBRE_PROFESOR3 = "BegoÃ±a";
 	private static final String CORREO_PROFESOR1 = "a@b.cc";
 	private static final String CORREO_PROFESOR2 = "b@c.dd";
 	private static final String CORREO_PROFESOR3 = "c@d.ee";
-	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
-	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
+	private static final String ERROR_EXCEPCION = "DeberÃ­a haber saltado la excepciÃ³n.";
+	private static final String ERROR_NO_EXCEPCION = "No deberÃ­a haber saltado la excepciÃ³n.";
 
 	private final Profesor profesor1 = new Profesor(NOMBRE_PROFESOR1, CORREO_PROFESOR1);
 	private final Profesor profesor2 = new Profesor(NOMBRE_PROFESOR2, CORREO_PROFESOR2);

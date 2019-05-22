@@ -17,7 +17,7 @@ public class Aulas {
 	private Aula[] coleccionAulas;
 
 	/**
-	 * Constructor por defecto. Inicializa el n鷐ero de aulas a cero
+	 * Constructor por defecto. Inicializa el n煤mero de aulas a cero
 	 */
 	public Aulas() {
 		this.numAulas = 0;
@@ -33,8 +33,8 @@ public class Aulas {
 	}
 
 	/**
-	 * Guarda en la colecci髇 actual de aulas los que hay en la recibida como par醡etro
-	 * @param aulas la colecci髇 a copiar
+	 * Guarda en la colecci贸n actual de aulas los que hay en la recibida como par谩metro
+	 * @param aulas la colecci贸n a copiar
 	 * @throws IllegalArgumentException si se intenta copiar un conjunto de aulas nulas
 	 */
 	private void setAulas(Aulas aulas) throws IllegalArgumentException {
@@ -46,8 +46,8 @@ public class Aulas {
 
 	/**
 	 * Realiza la copia en profundidad de cada profesor para evitar aliasing
-	 * @param coleccionAulas la colecci髇 de aulas a copiar
-	 * @return una copia de la colecci髇
+	 * @param coleccionAulas la colecci贸n de aulas a copiar
+	 * @return una copia de la colecci贸n
 	 */
 	private Aula[] copiaProfundaAulas(Aula[] coleccionAulas) {
 		Aula[] copia = new Aula[MAX_AULAS];
@@ -57,23 +57,23 @@ public class Aulas {
 	}
 
 	/**
-	 * Obtiene todas las aulas de la colecci髇 actual
-	 * @return una copia de la colecci髇
+	 * Obtiene todas las aulas de la colecci贸n actual
+	 * @return una copia de la colecci贸n
 	 */
 	public Aula[] getAulas() {
 		return copiaProfundaAulas(this.coleccionAulas);
 	}
 
 	/**
-	 * Obtiene el n鷐ero de aulas que existen en la colecci髇 actual
-	 * @return el n鷐ero de aulas
+	 * Obtiene el n煤mero de aulas que existen en la colecci贸n actual
+	 * @return el n煤mero de aulas
 	 */
 	public int getNumAulas() {
 		return numAulas;
 	}
 
 	/**
-	 * Guarda un aula en la colecci髇
+	 * Guarda un aula en la colecci贸n
 	 * @param aula el aula a guardar
 	 * @throws IllegalArgumentException si el aula es nula
 	 * @throws OperationNotSupportedException si el aula ya existe o se supera la capacidad
@@ -88,14 +88,14 @@ public class Aulas {
 			coleccionAulas[indice] = aula;
 			numAulas++;
 		} else
-			throw new OperationNotSupportedException("Se ha alcanzado el m醲imo de aulas que se pueden guardar.");
+			throw new OperationNotSupportedException("Se ha alcanzado el m谩ximo de aulas que se pueden guardar.");
 
 	}
 
 	/**
-	 * Busca el 韓dice en la colecci髇 de un aula indicada
-	 * @param aula el aula cuyo 韓dice queremos buscar
-	 * @return el 韓dice del aula buscada
+	 * Busca el 铆ndice en la colecci贸n de un aula indicada
+	 * @param aula el aula cuyo 铆ndice queremos buscar
+	 * @return el 铆ndice del aula buscada
 	 */
 	private int buscarIndiceAula(Aula aula) {
 		for(int i = 0; i < coleccionAulas.length; i++) {
@@ -109,9 +109,9 @@ public class Aulas {
 	}
 
 	/**
-	 * Comprueba que el 韓dice no supera el n鷐ero de aulas existentes
-	 * @param indice el 韓dice a comprobar
-	 * @return True si no supera el tama駉, False si lo supera
+	 * Comprueba que el 铆ndice no supera el n锟絤ero de aulas existentes
+	 * @param indice el 铆ndice a comprobar
+	 * @return True si no supera el tama帽o, False si lo supera
 	 */
 	private boolean indiceNoSuperaTamano(int indice) {
 		if(indice<numAulas)
@@ -120,8 +120,8 @@ public class Aulas {
 	}
 
 	/**
-	 * Comprueba que el 韓dice no supera la cantidad m醲ima que se puede guardar
-	 * @param indice el 韓dice a comprobar
+	 * Comprueba que el 铆ndice no supera la cantidad m谩xima que se puede guardar
+	 * @param indice el 铆ndice a comprobar
 	 * @return True si no supera la capacidad, False si la supera
 	 */
 	private boolean indiceNoSuperaCapacidad(int indice) {
@@ -131,7 +131,7 @@ public class Aulas {
 	}
 
 	/**
-	 * Busca un aula en la colecci髇
+	 * Busca un aula en la colecci贸n
 	 * @param aula el aula a buscar
 	 * @return el aula buscada o null si no la encuentra
 	 */
@@ -145,7 +145,7 @@ public class Aulas {
 	}
 
 	/**
-	 * Borra un aula de la colecci髇
+	 * Borra un aula de la colecci贸n
 	 * @param aula el aula a borrar
 	 * @throws IllegalArgumentException si el aula es nula
 	 * @throws OperationNotSupportedException si el aula no existe
@@ -164,7 +164,7 @@ public class Aulas {
 	}
 
 	/**
-	 * Desplaza las aulas a la posici髇 anterior de un 韓dice dado
+	 * Desplaza las aulas a la posici贸n anterior de un 铆ndice dado
 	 * @param indice desde donde hay que mover las aulas
 	 */
 	private void desplazarUnaPosicionHaciaIzquierda(int indice) {
@@ -174,7 +174,7 @@ public class Aulas {
 	}
 
 	/**
-	 * Obtiene las salidas de todas las aulas de la colecci髇
+	 * Obtiene las salidas de todas las aulas de la colecci贸n
 	 * @return la salida de las aulas
 	 */
 	public String[] representar() {

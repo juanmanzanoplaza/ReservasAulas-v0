@@ -10,11 +10,11 @@ import java.time.LocalDate;
 import org.junit.Test;
 
 public class ReservaTest {
-	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
-	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
-	private static final String nombreProfesor = "José Ramón";
+	private static final String ERROR_EXCEPCION = "DeberÃ­a haber saltado la excepciÃ³n.";
+	private static final String ERROR_NO_EXCEPCION = "No deberÃ­a haber saltado la excepciÃ³n.";
+	private static final String nombreProfesor = "JosÃ© RamÃ³n";
 	private static final String correo = "joseramon.jimenez@iesalandalus.org";
-	private static final String nombreAula = "Salón de actos";
+	private static final String nombreAula = "SalÃ³n de actos";
 	private static final LocalDate dia = LocalDate.of(2018, 12, 1);
 	
 	Profesor profesor = new Profesor(nombreProfesor, correo);
@@ -119,8 +119,8 @@ public class ReservaTest {
 	@Test
 	public void toStringTest() {
 		Reserva reserva = new Reserva(profesor, aula, permanencia);
-		String cadenaEsperada = "[profesor=[nombre=José Ramón, correo=joseramon.jimenez@iesalandalus.org]"
-				+ ", aula=[nombre=Salón de actos], permanencia=[dia=01/12/2018, tramo=Mañana]]";
+		String cadenaEsperada = "[profesor=[nombre=JosÃ© RamÃ³n, correo=joseramon.jimenez@iesalandalus.org]"
+				+ ", aula=[nombre=SalÃ³n de actos], permanencia=[dia=01/12/2018, tramo=MaÃ±ana]]";
 		assertEquals(cadenaEsperada, reserva.toString());
 	}
 }

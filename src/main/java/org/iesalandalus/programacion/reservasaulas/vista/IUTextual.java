@@ -33,15 +33,15 @@ public class IUTextual {
 	}
 
 	/**
-	 * Método que inicia el programa y mientras que no se elija la opción salir sigue ofreciendo opciones.
+	 * MÃ©todo que inicia el programa y mientras que no se elija la opciÃ³n salir sigue ofreciendo opciones.
 	 */
 	public void comenzar() {
 		Opcion opcion;
 		do {
 			Consola.mostrarMenu();
-			//Lectura de la opción
+			//Lectura de la opciÃ³n
 			opcion = Opcion.getOpcionSegunOrdinal(Consola.elegirOpcion());
-			// Ejecución de la opción
+			// EjecuciÃ³n de la opciÃ³n
 			opcion.ejecutar();
 		} while (opcion != Opcion.SALIR);
 	}
@@ -50,11 +50,11 @@ public class IUTextual {
 	 * Ejecuta la orden salir de Opcion
 	 */
 	public void salir() {
-		System.out.println("Fin de la ejecución.");
+		System.out.println("Fin de la ejecuciÃ³n.");
 	}
 
 	/**
-	 * Ejecuta la orden insertarAula de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden insertarAula de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void insertarAula() {
 		Consola.mostrarCabecera("INSERTAR AULA");
@@ -67,7 +67,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden borrarAula de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden borrarAula de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void borrarAula() {
 		Consola.mostrarCabecera("BORRAR AULA");
@@ -82,7 +82,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden buscarAula de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden buscarAula de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void buscarAula() {
 		Consola.mostrarCabecera("BUSCAR AULA");
@@ -95,19 +95,19 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarAulas de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden listarAulas de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void listarAulas() {
 		Consola.mostrarCabecera("LISTAR AULAS");
 		String[] aulas = modelo.representarAulas();
 		if(aulas.length==0)
-			System.out.println(ERROR + "No hay ningún aula guardada.");
+			System.out.println(ERROR + "No hay ningï¿½n aula guardada.");
 		for(int i = 0; i<aulas.length && aulas[i]!=null; i++)
 			System.out.println(aulas[i]);
 	}
 
 	/**
-	 * Ejecuta la orden insertarProfesor de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden insertarProfesor de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void insertarProfesor() {
 		Consola.mostrarCabecera("INSERTAR PROFESOR");
@@ -120,7 +120,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden borrarProfesor de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden borrarProfesor de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void borrarProfesor() {
 		Consola.mostrarCabecera("BORRAR PROFESOR");
@@ -134,7 +134,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden buscarProfesor de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden buscarProfesor de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void buscarProfesor() {
 		Consola.mostrarCabecera("BUSCAR PROFESOR");
@@ -147,19 +147,19 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarProfesores de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden listarProfesores de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void listarProfesores() {
 		Consola.mostrarCabecera("LISTAR PROFESORES");
 		String[] profesores = modelo.representarProfesores();
 		if(profesores.length==0)
-			System.out.println(ERROR + "No hay ningún profesor guardado.");
+			System.out.println(ERROR + "No hay ningÃºn profesor guardado.");
 		for(int i = 0; i<profesores.length && profesores[i]!=null; i++)
 			System.out.println(profesores[i]);
 	}
 
 	/**
-	 * Ejecuta la orden realizarReserva de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden realizarReserva de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void realizarReserva() {
 		Consola.mostrarCabecera("REALIZAR RESERVA");
@@ -188,9 +188,9 @@ public class IUTextual {
 	}
 
 	/**
-	 * Método privado que se encarga de leer una reserva
+	 * MÃ©todo privado que se encarga de leer una reserva
 	 * @param profesor el profesor responsable de la reserva
-	 * @return null si el profesor o el aula no existen, la reserva leída si existen ambos
+	 * @return null si el profesor o el aula no existen, la reserva leÃ­da si existen ambos
 	 */
 	private Reserva leerReserva(Profesor profesor) {
 		Profesor buscado = modelo.buscarProfesor(profesor);
@@ -203,7 +203,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden anularReserva de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden anularReserva de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void anularReserva() {
 		Consola.mostrarCabecera("ANULAR RESERVA");
@@ -232,7 +232,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarReservas de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden listarReservas de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void listarReservas() {
 		Consola.mostrarCabecera("LISTAR RESERVAS");
@@ -244,7 +244,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarReservasAula de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden listarReservasAula de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void listarReservasAula() {
 		Consola.mostrarCabecera("LISTAR RESERVAS AULA");
@@ -256,7 +256,7 @@ public class IUTextual {
 		}
 		Reserva[] reservas = modelo.getReservasAula(aula);
 		if(lecturaCorrecta && reservas[0] == null)
-			System.out.println("El aula indicada no está reservada.");
+			System.out.println("El aula indicada no estÃ¡ reservada.");
 		if(lecturaCorrecta) {
 			for(int i = 0; i<reservas.length && reservas[i]!=null; i++)
 				System.out.println(reservas[i]);
@@ -264,7 +264,7 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarReservasProfesor de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden listarReservasProfesor de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void listarReservasProfesor() {
 		Consola.mostrarCabecera("LISTAR RESERVAS PROFESOR");
@@ -276,7 +276,7 @@ public class IUTextual {
 		}
 		Reserva[] reservas = modelo.getReservasProfesor(profesor);
 		if(lecturaCorrecta && reservas[0]==null)
-			System.out.println("El profesor indicado no tiene ningún aula reservada.");
+			System.out.println("El profesor indicado no tiene ningÃºn aula reservada.");
 		if(lecturaCorrecta) {
 			for(int i = 0; i<reservas.length && reservas[i]!=null; i++)
 				System.out.println(reservas[i]);
@@ -284,20 +284,20 @@ public class IUTextual {
 	}
 
 	/**
-	 * Ejecuta la orden listarReservasPermanencia de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden listarReservasPermanencia de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void listarReservasPermanencia() {
 		Consola.mostrarCabecera("LISTAR RESERVAS PERMANENCIA");
 		Permanencia permanencia = new Permanencia(Consola.leerDia(), Consola.leerTramo());
 		Reserva[] reservas = modelo.getReservasPermanencia(permanencia);
 		if(reservas[0]==null)
-			System.out.println("En ese tramo no hay ningún aula reservada.");
+			System.out.println("En ese tramo no hay ningÃºn aula reservada.");
 		for(int i = 0; i<reservas.length && reservas[i]!=null; i++)
 			System.out.println(reservas[i]);
 	}
 
 	/**
-	 * Ejecuta la orden consultarDisponibilidad de Opcion llamando al método correspondiente de ModeloReservasAulas
+	 * Ejecuta la orden consultarDisponibilidad de Opcion llamando al mÃ©todo correspondiente de ModeloReservasAulas
 	 */
 	public void consultarDisponibilidad() {
 		Consola.mostrarCabecera("CONSULTAR DISPONIBILIDAD");
@@ -311,9 +311,9 @@ public class IUTextual {
 			Permanencia permanencia = new Permanencia(Consola.leerDia(), Consola.leerTramo());
 			boolean disponible = modelo.consultarDisponibilidad(aula, permanencia);
 			if(disponible)
-				System.out.println("El aula consultada está disponible para el tramo especificado.");
+				System.out.println("El aula consultada estï¿½ disponible para el tramo especificado.");
 			else
-				System.out.println("El aula consultada no está disponible para el tramo especificado.");
+				System.out.println("El aula consultada no estï¿½ disponible para el tramo especificado.");
 		}
 	}
 

@@ -21,7 +21,7 @@ public class Profesor {
 	/**
 	 * Constructor de la clase
 	 * @param nombre el nombre del profesor
-	 * @param correo el correo electrÛnico del profesor
+	 * @param correo el correo electr√≥nico del profesor
 	 */
 	public Profesor(String nombre, String correo) {
 		setNombre(nombre);
@@ -32,8 +32,8 @@ public class Profesor {
 	/**
 	 * Constructor de la clase
 	 * @param nombre el nombre del profesor
-	 * @param correo el correo electrÛnico del profesor
-	 * @param telefono el telÈfono del profesor
+	 * @param correo el correo electr√≥nico del profesor
+	 * @param telefono el tel√©fono del profesor
 	 */
 	public Profesor(String nombre, String correo, String telefono) {
 		setNombre(nombre);
@@ -56,23 +56,23 @@ public class Profesor {
 	}
 
 	/**
-	 * MÈtodo set para el nombre del profesor
+	 * M√©todo set para el nombre del profesor
 	 * @param nombre el nombre del profesor
-	 * @throws IllegalArgumentException si el nombre es nulo o vacÌo
+	 * @throws IllegalArgumentException si el nombre es nulo o vac√≠o
 	 */
 	private void setNombre(String nombre) throws IllegalArgumentException {
 		if(nombre==null)
 			throw new IllegalArgumentException("El nombre del profesor no puede ser nulo.");
 		if(nombre.equals(""))
-			throw new IllegalArgumentException("El nombre del profesor no puede estar vacÌo.");
+			throw new IllegalArgumentException("El nombre del profesor no puede estar vac√≠o.");
 		this.nombre = nombre;
 
 	}
 
 	/**
-	 * MÈtodo set para el correo electrÛnico del profesor
+	 * M√©todo set para el correo electr√≥nico del profesor
 	 * @param correo el correo del profesor
-	 * @throws IllegalArgumentException si el correo es nulo o no es un correo con formato v·lido
+	 * @throws IllegalArgumentException si el correo es nulo o no es un correo con formato v√°lido
 	 */
 	public void setCorreo(String correo) throws IllegalArgumentException {
 		if(correo==null)
@@ -82,14 +82,14 @@ public class Profesor {
 		if(m.matches())
 			this.correo = correo;
 		else
-			throw new IllegalArgumentException("El correo del profesor no es v·lido.");
+			throw new IllegalArgumentException("El correo del profesor no es v√°lido.");
 
 	}
 
 	/**
-	 * MÈtodo set para el telÈfono del profesor
+	 * M√©todo set para el tel√©fono del profesor
 	 * @param telefono el telefono del profesor
-	 * @throws IllegalArgumentException si el telÈfono no tiene un formato v·lido
+	 * @throws IllegalArgumentException si el tel√©fono no tiene un formato v√°lido
 	 */
 	public void setTelefono(String telefono) throws IllegalArgumentException {
 		if(telefono==null) {
@@ -100,12 +100,12 @@ public class Profesor {
 			if(m.matches())
 				this.telefono = telefono;
 			else
-				throw new IllegalArgumentException("El telÈfono del profesor no es v·lido.");
+				throw new IllegalArgumentException("El tel√©fono del profesor no es v√°lido.");
 		}
 	}
 
 	/**
-	 * MÈtodo get para el nombre del profesor
+	 * M√©todo get para el nombre del profesor
 	 * @return el nombre del profesor
 	 */
 	public String getNombre() {
@@ -113,7 +113,7 @@ public class Profesor {
 	}
 
 	/**
-	 * MÈtodo get para el correo del profesor
+	 * M√©todo get para el correo del profesor
 	 * @return el correo del profesor
 	 */
 	public String getCorreo() {
@@ -121,23 +121,23 @@ public class Profesor {
 	}
 
 	/**
-	 * MÈtodo get para el telÈfono del profesor
-	 * @return el telÈfono del profesor
+	 * M√©todo get para el tel√©fono del profesor
+	 * @return el tel√©fono del profesor
 	 */
 	public String getTelefono() {
 		return telefono;
 	}
 
 	/**
-	 * MÈtodo hashCode de la clase. Sirve para diferenciar objetos
-	 * @return el cÛdigo hash del objeto
+	 * M√©todo hashCode de la clase. Sirve para diferenciar objetos
+	 * @return el c√≥digo hash del objeto
 	 */
 	public int hashCode() {
 		return Objects.hash(nombre, correo, telefono);
 	}
 
 	/**
-	 * MÈtodo equals de la clase
+	 * M√©todo equals de la clase
 	 * @return True si son iguales, False si no
 	 */
 	public boolean equals(Object o) {
@@ -154,7 +154,7 @@ public class Profesor {
 
 	/**
 	 * Representa un profesor como una cadena de caracteres
-	 * @return la representaciÛn del profesor
+	 * @return la representaci√≥n del profesor
 	 */
 	public String toString() {
 		String devolver = "[nombre=" + getNombre() + ", correo=" + getCorreo();

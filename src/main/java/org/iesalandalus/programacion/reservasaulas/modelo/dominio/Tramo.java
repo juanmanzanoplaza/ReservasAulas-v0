@@ -7,13 +7,13 @@ package org.iesalandalus.programacion.reservasaulas.modelo.dominio;
  * @version 0
  */
 public enum Tramo {
-	MANANA("Mañana"),
+	MANANA("MaÃ±ana"),
 	TARDE("Tarde");
 	private String cadenaAMostrar;
 
 	/**
 	 * Constructor privado
-	 * @param cadenaAMostrar la representación del tramo como cadena de caracteres
+	 * @param cadenaAMostrar la representaciÃ³n del tramo como cadena de caracteres
 	 */
 	private Tramo(String cadenaAMostrar) {
 		this.cadenaAMostrar = cadenaAMostrar;
@@ -21,7 +21,7 @@ public enum Tramo {
 
 	/**
 	 * Representa un tramo como una cadena de caracteres
-	 * @return la representación del tramo
+	 * @return la representaciÃ³n del tramo
 	 */
 	public String toString() {
 		return cadenaAMostrar;

@@ -20,7 +20,7 @@ public class Reservas {
 	private Reserva[] coleccionReservas;
 
 	/**
-	 * Constructor por defecto. Inicializa el número de profesores a cero
+	 * Constructor por defecto. Inicializa el nÃºmero de profesores a cero
 	 */
 	public Reservas() {
 		this.numReservas = 0;
@@ -36,8 +36,8 @@ public class Reservas {
 	}
 
 	/**
-	 * Guarda en la colección actual de reservas los que hay en la colección recibida como parámetro
-	 * @param reservas la colección a copiar
+	 * Guarda en la colecciÃ³n actual de reservas los que hay en la colecciÃ³n recibida como parÃ¡metro
+	 * @param reservas la colecciÃ³n a copiar
 	 * @throws IllegalArgumentException si se intenta copiar un conjunto de reservas nulo
 	 */
 	private void setReservas(Reservas reservas) throws IllegalArgumentException {
@@ -49,8 +49,8 @@ public class Reservas {
 
 	/**
 	 * Realiza la copia en profundidad de cada reserva para evitar aliasing
-	 * @param reservas la colección de reservas a copiar
-	 * @return una copia de la colección
+	 * @param reservas la colecciÃ³n de reservas a copiar
+	 * @return una copia de la colecciÃ³n
 	 */
 	private Reserva[] copiaProfundaReservas(Reserva[] reservas) {
 		Reserva[] copia = new Reserva[MAX_RESERVAS];
@@ -60,23 +60,23 @@ public class Reservas {
 	}
 
 	/**
-	 * Obtiene todas las reservas de la colección actual. Realiza una copia para evitar aliasing
-	 * @return una copia de la colección
+	 * Obtiene todas las reservas de la colecciÃ³n actual. Realiza una copia para evitar aliasing
+	 * @return una copia de la colecciÃ³n
 	 */
 	public Reserva[] getReservas() {
 		return copiaProfundaReservas(this.coleccionReservas);
 	}
 
 	/**
-	 * Obtiene el número de reservas que existen en la colección actual
-	 * @return el número de reservas
+	 * Obtiene el nÃºmero de reservas que existen en la colecciÃ³n actual
+	 * @return el nÃºmero de reservas
 	 */
 	public int getNumReservas() {
 		return numReservas;
 	}
 
 	/**
-	 * Guarda una reserva en la colección
+	 * Guarda una reserva en la colecciÃ³n
 	 * @param reserva la reserva a guardar
 	 * @throws IllegalArgumentException si la reserva es nula
 	 * @throws OperationNotSupportedException si la reserva ya existe o se supera la capacidad
@@ -91,13 +91,13 @@ public class Reservas {
 			coleccionReservas[indice] = reserva;
 			numReservas++;
 		} else
-			throw new OperationNotSupportedException("Se ha alcanzado el máximo de reservas que se pueden guardar.");
+			throw new OperationNotSupportedException("Se ha alcanzado el mï¿½ximo de reservas que se pueden guardar.");
 	}
 
 	/**
-	 * Busca el índice en la colección de una reserva indicada
-	 * @param reserva la reserva cuyo índice queremos buscar
-	 * @return el índice de la reserva
+	 * Busca el Ã­ndice en la colecciÃ³n de una reserva indicada
+	 * @param reserva la reserva cuyo Ã­ndice queremos buscar
+	 * @return el Ã­ndice de la reserva
 	 */
 	private int buscarIndiceReserva(Reserva reserva) {
 		for(int i = 0; i < coleccionReservas.length; i++) {
@@ -111,9 +111,9 @@ public class Reservas {
 	}
 
 	/**
-	 * Comprueba que el índice no supera el número de reservas existentes
-	 * @param indice el índice a comprobar
-	 * @return True si no supera el tamaño, False si lo supera
+	 * Comprueba que el Ã­ndice no supera el nï¿½mero de reservas existentes
+	 * @param indice el Ã­ndice a comprobar
+	 * @return True si no supera el tamaÃ±o, False si lo supera
 	 */
 	private boolean indiceNoSuperaTamano(int indice) {
 		if(indice<numReservas)
@@ -122,8 +122,8 @@ public class Reservas {
 	}
 
 	/**
-	 * Comprueba que el índice no supera la cantidad máxima que se puede guardar
-	 * @param indice el índice a comprobar
+	 * Comprueba que el Ã­ndice no supera la cantidad mÃ¡xima que se puede guardar
+	 * @param indice el Ã­ndice a comprobar
 	 * @return True si no supera la capacidad, False si la supera
 	 */
 	private boolean indiceNoSuperaCapacidad(int indice) {
@@ -133,7 +133,7 @@ public class Reservas {
 	}
 
 	/**
-	 * Busca una reserva en la colección
+	 * Busca una reserva en la colecciÃ³n
 	 * @param reserva la reserva a buscar
 	 * @return la reserva buscada o null si no la encuentra
 	 */
@@ -147,7 +147,7 @@ public class Reservas {
 	}
 
 	/**
-	 * Borra una reserva de la colección
+	 * Borra una reserva de la colecciÃ³n
 	 * @param reserva la reserva a borrar
 	 * @throws IllegalArgumentException si la reserva es nula
 	 * @throws OperationNotSupportedException si la reserva no existe
@@ -165,7 +165,7 @@ public class Reservas {
 	}
 
 	/**
-	 * Desplaza las reservas a la posición anterior desde un índice dado
+	 * Desplaza las reservas a la posiciÃ³n anterior desde un Ã­ndice dado
 	 * @param indice desde donde hay que mover las reservas
 	 */
 	private void desplazarUnaPosicionHaciaIzquierda(int indice) {
@@ -175,7 +175,7 @@ public class Reservas {
 	}
 
 	/**
-	 * Obtiene las salidas de todas las reservas de la colección
+	 * Obtiene las salidas de todas las reservas de la colecciÃ³n
 	 * @return la salida de las reservas
 	 */
 	public String[] representar() {
@@ -246,10 +246,10 @@ public class Reservas {
 	}
 
 	/**
-	 * Comprueba si un aula está disponible en una fecha y tramos indicados
+	 * Comprueba si un aula estÃ¡ disponible en una fecha y tramos indicados
 	 * @param aula el aula a comprobar
 	 * @param permanencia la fecha y tramo en las que comprobar el aula
-	 * @return True si está disponible, False si está reservada
+	 * @return True si estÃ¡ disponible, False si estÃ¡ reservada
 	 */
 	public boolean consultarDisponibilidad(Aula aula, Permanencia permanencia) throws IllegalArgumentException {
 		if(aula==null)

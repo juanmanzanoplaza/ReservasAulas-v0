@@ -4,7 +4,7 @@ import org.iesalandalus.programacion.reservasaulas.vista.IUTextual;
 
 /**
  * 
- * Clase principal del programa. Se encarga de hacer la primera llamada y comenzar la ejecución.
+ * Clase principal del programa. Se encarga de hacer la primera llamada y comenzar la ejecuciÃ³n.
  * @see IUTextual
  * @author Juan Antonio Manzano Plaza
  * @version 0
@@ -13,7 +13,7 @@ import org.iesalandalus.programacion.reservasaulas.vista.IUTextual;
 public class MainApp {
 
 	public static void main(String[] args) {
-		System.out.println("Programa para la gestión de reservas de espacios del IES Al-Ándalus.");
+		System.out.println("Programa para la gestiÃ³n de reservas de espacios del IES Al-ï¿½ndalus.");
 		IUTextual a = new IUTextual();
 		a.comenzar();
 	}

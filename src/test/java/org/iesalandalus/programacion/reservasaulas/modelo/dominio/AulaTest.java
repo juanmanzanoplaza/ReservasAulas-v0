@@ -8,9 +8,9 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 public class AulaTest {
-	private static final String ERROR_EXCEPCION = "Deber韆 haber saltado la excepci髇.";
-	private static final String ERROR_NO_EXCEPCION = "No deber韆 haber saltado la excepci髇.";
-	private static final String nombre = "Sal髇 de actos";
+	private static final String ERROR_EXCEPCION = "Deber铆a haber saltado la excepci贸n.";
+	private static final String ERROR_NO_EXCEPCION = "No deber铆a haber saltado la excepci贸n.";
+	private static final String nombre = "Sal贸n de actos";
 
 	@Test
 	public void constructorUnParametroValidoTest() {
@@ -38,7 +38,7 @@ public class AulaTest {
 			aula = new Aula("");
 			fail(ERROR_EXCEPCION);
 		} catch (IllegalArgumentException e) {
-			assertEquals("El nombre del aula no puede estar vac韔.", e.getMessage());
+			assertEquals("El nombre del aula no puede estar vac铆o.", e.getMessage());
 			assertNull(aula);
 		}
 	}
@@ -78,7 +78,7 @@ public class AulaTest {
 	public void hasCodeTest() {
 		Aula aula = new Aula(nombre);
 		Aula aula1 = new Aula(nombre);
-		Aula aula2 = new Aula("Andr閟");
+		Aula aula2 = new Aula("Andr茅s");
 		assertEquals(aula.hashCode(), aula.hashCode());
 		assertEquals(aula.hashCode(), aula1.hashCode());
 		assertNotEquals(aula.hashCode(), aula2.hashCode());
@@ -88,7 +88,7 @@ public class AulaTest {
 	public void equalTest() {
 		Aula aula = new Aula(nombre);
 		Aula aula1 = new Aula(nombre);
-		Aula aula2 = new Aula("Andr閟");
+		Aula aula2 = new Aula("Andr茅s");
 		assertNotEquals(aula, null);
 		assertNotEquals(aula, "");
 		assertEquals(aula, aula);
@@ -99,6 +99,6 @@ public class AulaTest {
 	@Test
 	public void toStringTest() {
 		Aula aula = new Aula(nombre);
-		assertEquals("[nombre=Sal髇 de actos]", aula.toString());
+		assertEquals("[nombre=Sal贸n de actos]", aula.toString());
 	}
 }

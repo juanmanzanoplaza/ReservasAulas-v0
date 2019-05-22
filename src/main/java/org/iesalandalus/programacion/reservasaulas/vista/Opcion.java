@@ -2,7 +2,7 @@ package org.iesalandalus.programacion.reservasaulas.vista;
 
 /**
  * 
- * Representa las distintas opciones que ofrece el menú de la aplicación.
+ * Representa las distintas opciones que ofrece el menÃº de la aplicaciÃ³n.
  * @see IUTextual
  * @author Juan Antonio Manzano Plaza
  * @version 0
@@ -95,27 +95,27 @@ public enum Opcion {
 
 	/**
 	 * Constructor privado para evitar instanciar objetos de la clase.
-	 * @param mensajeAMostrar el título de la opción
+	 * @param mensajeAMostrar el tÃ­tulo de la opciÃ³n
 	 */
 	private Opcion(String mensajeAMostrar) {
 		this.mensajeAMostrar = mensajeAMostrar;
 	}
 
 	/**
-	 * Método get que devuelve el título de la opción
-	 * @return el título de la opción
+	 * MÃ©todo get que devuelve el tÃ­tulo de la opciÃ³n
+	 * @return el tÃ­tulo de la opciÃ³n
 	 */
 	public String getMensaje() {
 		return mensajeAMostrar;
 	}
 
 	/**
-	 * Llama al método correspondiente a la opción de la clase IUTextual
+	 * Llama al mÃ©todo correspondiente a la opciÃ³n de la clase IUTextual
 	 */
 	public abstract void ejecutar();
 
 	/**
-	 * Método set que inicializa la variable vista
+	 * MÃ©todo set que inicializa la variable vista
 	 * @param iutextual objeto de la clase IUTextual sobre el que se van a realizar las opciones
 	 */
 	protected static void setVista(IUTextual iutextual) {
@@ -124,25 +124,25 @@ public enum Opcion {
 
 	/**
 	 * Define como debe mostrarse un objeto Opcion
-	 * @return mensajeAMostrar el título de la opción
+	 * @return mensajeAMostrar el tÃ­tulo de la opciÃ³n
 	 */
 	public String toString() {
 		return mensajeAMostrar;
 	}
 
 	/**
-	 * Devuelve la opción correspondiente al valor recibido
-	 * @param ordinal el valor de la opción
-	 * @return la opción correspondiente al ordinal
+	 * Devuelve la opciÃ³n correspondiente al valor recibido
+	 * @param ordinal el valor de la opciÃ³n
+	 * @return la opciÃ³n correspondiente al ordinal
 	 */
 	public static Opcion getOpcionSegunOrdinal(int ordinal) {
 		return Opcion.values()[ordinal];
 	}
 
 	/**
-	 * Comprueba si un ordinal está dentro del rango de valores de Opcion
-	 * @param ordinal el valor de la opción que se desea seleccionar
-	 * @return True si el valor está dentro del rango, False si no
+	 * Comprueba si un ordinal estÃ¡ dentro del rango de valores de Opcion
+	 * @param ordinal el valor de la opciÃ³n que se desea seleccionar
+	 * @return True si el valor estÃ¡ dentro del rango, False si no
 	 */
 	public static boolean esOrdinalValido(int ordinal) {
 		if(ordinal>=0 && ordinal<Opcion.values().length)

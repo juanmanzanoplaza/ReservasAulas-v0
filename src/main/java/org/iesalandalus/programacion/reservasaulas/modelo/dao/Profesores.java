@@ -18,7 +18,7 @@ public class Profesores {
 	private Profesor[] coleccionProfesores;
 
 	/**
-	 * Constructor por defecto. Inicializa el n鷐ero de profesores a cero
+	 * Constructor por defecto. Inicializa el n煤mero de profesores a cero
 	 */
 	public Profesores() {
 		this.numProfesores = 0;
@@ -34,8 +34,8 @@ public class Profesores {
 	}
 
 	/**
-	 * Guarda en la colecci髇 actual de profesores los que hay en la recibida como par醡etro
-	 * @param profesores la colecci髇 a copiar
+	 * Guarda en la colecci贸n actual de profesores los que hay en la recibida como par谩metro
+	 * @param profesores la colecci贸n a copiar
 	 * @throws IllegalArgumentException si se intenta copiar un conjunto de profesores nulos
 	 */
 	private void setProfesores(Profesores profesores) throws IllegalArgumentException {
@@ -47,8 +47,8 @@ public class Profesores {
 
 	/**
 	 * Realiza la copia en profundidad de cada profesor para evitar aliasing
-	 * @param profesores la colecci髇 de profesores a copiar
-	 * @return una copia de la colecci髇
+	 * @param profesores la colecci贸n de profesores a copiar
+	 * @return una copia de la colecci贸n
 	 */
 	private Profesor[] copiaProfundaProfesores(Profesor[] profesores) {
 		Profesor[] copia = new Profesor[MAX_PROFESORES];
@@ -58,23 +58,23 @@ public class Profesores {
 	}
 
 	/**
-	 * Obtiene todos los profesores de la colecci髇 actual. Realiza una copia para evitar aliasing
-	 * @return una copia de la colecci髇
+	 * Obtiene todos los profesores de la colecci贸n actual. Realiza una copia para evitar aliasing
+	 * @return una copia de la colecci贸n
 	 */
 	public Profesor[] getProfesores() {
 		return copiaProfundaProfesores(this.coleccionProfesores);
 	}
 
 	/**
-	 * Obtiene el n鷐ero de profesores que existen en la colecci髇 actual
-	 * @return el n鷐ero de profesores
+	 * Obtiene el n煤mero de profesores que existen en la colecci贸n actual
+	 * @return el n煤mero de profesores
 	 */
 	public int getNumProfesores() {
 		return numProfesores;
 	}
 
 	/**
-	 * Guarda un profesor en la colecci髇
+	 * Guarda un profesor en la colecci贸n
 	 * @param profesor el profesor a guardar
 	 * @throws IllegalArgumentException si el profesor es nulo
 	 * @throws OperationNotSupportedException si el profesor ya existe o se supera la capacidad
@@ -89,13 +89,13 @@ public class Profesores {
 			coleccionProfesores[indice] = profesor;
 			numProfesores++;
 		} else
-			throw new OperationNotSupportedException("Se ha alcanzado el m醲imo de profesores que se pueden guardar.");
+			throw new OperationNotSupportedException("Se ha alcanzado el m锟絰imo de profesores que se pueden guardar.");
 	}
 
 	/**
-	 * Busca el 韓dice en la colecci髇 de un profesor indicado
-	 * @param profesor el profesor cuyo 韓dice queremos buscar
-	 * @return el 韓dice del profesor
+	 * Busca el 铆ndice en la colecci贸n de un profesor indicado
+	 * @param profesor el profesor cuyo 铆ndice queremos buscar
+	 * @return el 铆ndice del profesor
 	 */
 	private int buscarIndiceProfesor(Profesor profesor) {
 		for(int i = 0; i < coleccionProfesores.length; i++) {
@@ -109,9 +109,9 @@ public class Profesores {
 	}
 
 	/**
-	 * Comprueba que el 韓dice no supera el n鷐ero de profesores existentes
-	 * @param indice el 韓dice a comprobar
-	 * @return True si no supera el tama駉, False si lo supera
+	 * Comprueba que el 铆ndice no supera el n煤mero de profesores existentes
+	 * @param indice el 铆ndice a comprobar
+	 * @return True si no supera el tama帽o, False si lo supera
 	 */
 	private boolean indiceNoSuperaTamano(int indice) {
 		if(indice<numProfesores)
@@ -120,8 +120,8 @@ public class Profesores {
 	}
 
 	/**
-	 * Comprueba que el 韓dice no supera la cantidad m醲ima que se puede guardar
-	 * @param indice el 韓dice a comprobar
+	 * Comprueba que el 铆ndice no supera la cantidad m谩xima que se puede guardar
+	 * @param indice el 铆ndice a comprobar
 	 * @return True si no supera la capacidad, False si la supera
 	 */
 	private boolean indiceNoSuperaCantidad(int indice) {
@@ -131,7 +131,7 @@ public class Profesores {
 	}
 
 	/**
-	 * Busca un profesor en la colecci髇
+	 * Busca un profesor en la colecci贸n
 	 * @param profesor el profesor a buscar
 	 * @return el profesor buscado o null si no lo encuentra
 	 */
@@ -145,7 +145,7 @@ public class Profesores {
 	}
 
 	/**
-	 * Borra un profesor de la colecci髇
+	 * Borra un profesor de la colecci贸n
 	 * @param profesor el profesor a borrar
 	 * @throws IllegalArgumentException si el profesor es nulo
 	 * @throws OperationNotSupportedException si el profesor no existe
@@ -163,7 +163,7 @@ public class Profesores {
 	}
 
 	/**
-	 * Desplaza los profesores a la posici髇 anterior desde un 韓dice dado
+	 * Desplaza los profesores a la posici贸n anterior desde un 铆ndice dado
 	 * @param indice desde donde hay que mover los profesores
 	 */
 	private void desplazarUnaPosicionHaciaIzquierda(int indice) {
@@ -173,7 +173,7 @@ public class Profesores {
 	}
 
 	/**
-	 * Obtiene las salidas de todos los profesores de la colecci髇
+	 * Obtiene las salidas de todos los profesores de la colecci贸n
 	 * @return la salida de los profesores
 	 */
 	public String[] representar() {

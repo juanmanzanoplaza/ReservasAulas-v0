@@ -31,20 +31,20 @@ public class Aula {
 	}
 
 	/**
-	 * Método set para el nombre del aula
+	 * MÃ©todo set para el nombre del aula
 	 * @param nombre el nombre del aula
-	 * @throws IllegalArgumentException si el nombre es nulo o vacío
+	 * @throws IllegalArgumentException si el nombre es nulo o vacÃ­o
 	 */
 	private void setNombre(String nombre) throws IllegalArgumentException {
 		if(nombre==null)
 			throw new IllegalArgumentException("El nombre del aula no puede ser nulo.");
 		if(nombre.equals(""))
-			throw new IllegalArgumentException("El nombre del aula no puede estar vacío.");
+			throw new IllegalArgumentException("El nombre del aula no puede estar vacÃ­o.");
 		this.nombre = nombre;
 	}
 
 	/**
-	 * Método get para el nombre del aula
+	 * MÃ©todo get para el nombre del aula
 	 * @return el nombre del aula
 	 */
 	public String getNombre() {
@@ -52,15 +52,15 @@ public class Aula {
 	}
 
 	/**
-	 * Método hashCode de la clase. Sirve para diferenciar objetos
-	 * @return el código hash del objeto
+	 * MÃ©todo hashCode de la clase. Sirve para diferenciar objetos
+	 * @return el cÃ³digo hash del objeto
 	 */
 	public int hashCode() {
 		return Objects.hash(nombre);
 	}
 
 	/**
-	 * Método equals de la clase
+	 * MÃ©todo equals de la clase
 	 * @return True si son iguales, False si no
 	 */
 	public boolean equals(Object o) {
@@ -76,7 +76,7 @@ public class Aula {
 
 	/**
 	 * Representa un aula como una cadena de caracteres
-	 * @return la representación del aula
+	 * @return la representaciÃ³n del aula
 	 */
 	public String toString() {
 		return "[nombre=" + nombre + "]";

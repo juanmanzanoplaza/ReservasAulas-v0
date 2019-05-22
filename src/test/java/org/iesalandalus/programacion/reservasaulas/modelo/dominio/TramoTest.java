@@ -22,7 +22,7 @@ public class TramoTest {
 	
 	@Test
 	public void toStringValidoTest() {
-		assertEquals("Mañana", Tramo.MANANA.toString());
+		assertEquals("MaÃ±ana", Tramo.MANANA.toString());
 		assertEquals("Tarde", Tramo.TARDE.toString());
 	}
 }
